@@ -103,6 +103,45 @@ h1 em{font-style:normal;color:var(--cinnabar);}
 .rule-sub{font-size:.93em;color:var(--ink-2);margin:15px 0 20px;max-width:66ch;}
 .rule-sub b{color:var(--ink);font-weight:600;}
 
+/* ===== simple funnel overview ===== */
+.flow{display:flex;flex-direction:column;}
+.fstep{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:18px 20px;}
+.fnum{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:13px;border:1.5px solid var(--jade);color:var(--jade);margin-top:2px;}
+.ftitle{font-family:var(--serif);font-size:clamp(17px,2vw,20px);font-weight:600;line-height:1.35;}
+.fen{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:2px 0 7px;}
+.fdesc{font-size:.88em;color:var(--ink-2);line-height:1.7;}
+.fdesc b{color:var(--ink);}
+.farrow{align-self:center;color:var(--hair-2);font-size:19px;line-height:1;padding:7px 0;}
+
+.fbranch{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:var(--gap);}
+.flane{background:var(--white);border:1px solid var(--hair);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;}
+.flane.low{border-top:3px solid var(--sage);}
+.flane.high{border-top:3px solid var(--cinnabar);}
+.flane-h{padding:15px 18px 13px;border-bottom:1px solid var(--hair);}
+.flane-tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
+.flane.low .flane-tag{color:var(--sage);}
+.flane.high .flane-tag{color:var(--cinnabar);}
+.flane-n{font-family:var(--serif);font-size:clamp(16px,1.9vw,18px);font-weight:600;margin-top:3px;line-height:1.35;}
+.flane-b{padding:13px 18px 16px;flex:1;display:flex;flex-direction:column;}
+.flane-b ol{list-style:none;margin:0;padding:0;counter-reset:fs;flex:1;}
+.flane-b li{font-size:.86em;color:var(--ink-2);line-height:1.65;padding:5px 0 5px 24px;position:relative;counter-increment:fs;}
+.flane-b li::before{content:counter(fs);position:absolute;left:0;top:5px;font-family:var(--mono);font-size:10.5px;color:var(--muted);}
+.flane-b li b{color:var(--ink);}
+.flane-p{margin-top:11px;padding-top:11px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:.92em;}
+.flane.low .flane-p{color:var(--sage);}
+.flane.high .flane-p{color:var(--cinnabar);}
+
+.floop{background:var(--ink);color:#DFE7DF;border-radius:3px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;}
+.floop-i{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:18px;border:1.5px solid #E8A49B;color:#E8A49B;margin-top:2px;}
+.floop-t{font-family:var(--serif);font-size:clamp(17px,2vw,20px);font-weight:600;line-height:1.35;}
+.floop-en{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7E9C90;margin:2px 0 9px;}
+.floop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:5px 22px;}
+.floop-item{font-size:.86em;line-height:1.65;padding-left:17px;position:relative;}
+.floop-item::before{content:"\21BA";position:absolute;left:0;top:2px;color:#E8A49B;font-size:12px;}
+.floop-item b{color:#E8A49B;}
+.floop-foot{margin-top:13px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);font-size:.86em;color:#8B9C94;line-height:1.75;}
+.floop-foot b{color:#E8A49B;}
+
 /* ===== shared base: positioning ===== */
 .pos{background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:clamp(22px,3vw,30px);}
 .pos-line{font-family:var(--serif);font-size:clamp(18px,2.7vw,24px);line-height:1.6;font-weight:600;margin:0 0 6px;}
@@ -323,6 +362,11 @@ footer a:hover{text-decoration:underline;}
 @media (max-width:720px){
   .nav-in{padding-left:12px;padding-right:12px;gap:8px;}
 
+  .fstep{gap:13px;padding:16px 17px;}
+  .fnum{flex:0 0 36px;height:36px;font-size:12px;}
+  .floop{flex-direction:column;gap:12px;padding:19px 17px;}
+  .floop-i{flex:0 0 auto;width:36px;height:36px;font-size:16px;}
+
   .lyr{grid-template-columns:1fr;}
   .lyr-name{flex-direction:row;align-items:baseline;gap:10px;padding:13px 18px;flex-wrap:wrap;}
   .lyr-title{margin-top:0;}
@@ -348,9 +392,9 @@ footer a:hover{text-decoration:underline;}
   .nav{display:none;}
   body{background:#fff;font-size:10.5pt;}
   .wrap{max-width:none;padding:0;}
-  .plan,.mod,.tcard,.layers,.st,.pos,.callout,.gain,.closing{break-inside:avoid;}
+  .plan,.mod,.tcard,.layers,.st,.pos,.callout,.gain,.closing,.fstep,.flane,.floop{break-inside:avoid;}
   .rule{break-after:avoid;}
-  .gain,.layers-foot{background:#121A18 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .gain,.layers-foot,.floop{background:#121A18 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .plan-head,.lyr-name{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
 @media (prefers-reduced-motion:reduce){
@@ -368,6 +412,7 @@ footer a:hover{text-decoration:underline;}
       <a href="./full-plan.html">完整規劃</a>
     </div>
     <div class="nav-links" id="navlinks">
+      <a href="#s0">全貌 Overview</a>
       <a href="#s1">基礎 Basics</a>
       <a href="#s2">方案 Plans</a>
       <a href="#s3">對照 Compare</a>
@@ -401,10 +446,120 @@ footer a:hover{text-decoration:underline;}
   </div>
 </header>
 
-<!-- ===== 1. 共同基礎 ===== -->
+<!-- ===== 0. 全貌 ===== -->
+<section id="s0">
+<div class="rule">
+  <div class="kicker">01 · 全貌 The Machine</div>
+  <h2>先看最簡單的版本</h2>
+  <div class="h2en">The Whole Thing in Five Steps</div>
+</div>
+<p class="rule-sub">
+  整套只有五步，而且<b>第五步會回到第一步</b>。這一頁後面所有的細節，都是在講這五步裡的某一步，先記住這張圖就好。
+</p>
+
+<div class="flow">
+
+  <div class="fstep">
+    <div class="fnum">01</div>
+    <div>
+      <div class="ftitle">拍片引流</div>
+      <div class="fen">Attract · IG / Facebook</div>
+      <div class="fdesc">短影片講同行每天在痛的事。<b>結尾固定同一句話</b>，把人帶到一個網頁。</div>
+    </div>
+  </div>
+
+  <div class="farrow">↓</div>
+
+  <div class="fstep">
+    <div class="fnum">02</div>
+    <div>
+      <div class="ftitle">換到 email</div>
+      <div class="fen">Capture · Landing Page</div>
+      <div class="fdesc">這個網頁<b>只做一件事</b>：用「三層耗損檢測」換他的 email。不賣東西，不解釋太多。</div>
+    </div>
+  </div>
+
+  <div class="farrow">↓</div>
+
+  <div class="fstep">
+    <div class="fnum">03</div>
+    <div>
+      <div class="ftitle">電郵行銷，然後分流</div>
+      <div class="fen">Nurture · Then Split</div>
+      <div class="fdesc">自動寄信，講你的故事和觀點。信裡<b>同時開兩個門，讓他自己選</b>：想自己學的走左邊，想被你帶的走右邊。</div>
+    </div>
+  </div>
+
+  <div class="farrow">↓</div>
+
+  <div class="fbranch">
+    <div class="flane low">
+      <div class="flane-h">
+        <div class="flane-tag">左邊 · 低價 Self-Serve</div>
+        <div class="flane-n">他自己買，自己看</div>
+      </div>
+      <div class="flane-b">
+        <ol>
+          <li>信裡直接放購買連結</li>
+          <li>他刷卡，系統自動開通</li>
+          <li><b>你完全不用出現</b></li>
+        </ol>
+        <div class="flane-p">$497　錄播課</div>
+      </div>
+    </div>
+    <div class="flane high">
+      <div class="flane-h">
+        <div class="flane-tag">右邊 · 高單價 High Ticket</div>
+        <div class="flane-n">先聊，再成交</div>
+      </div>
+      <div class="flane-b">
+        <ol>
+          <li>信裡放「預約一對一諮詢」</li>
+          <li>30 分鐘聊他的狀況，不是推銷</li>
+          <li><b>當場成交，收訂金</b></li>
+        </ol>
+        <div class="flane-p">$1,297 起　帶班／一對一</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="farrow">↓</div>
+
+  <div class="fstep">
+    <div class="fnum">04</div>
+    <div>
+      <div class="ftitle">交付</div>
+      <div class="fen">Deliver</div>
+      <div class="fdesc">低價的自動交付，高價的六週帶班或一對一。這一步唯一的任務：<b>讓他真的做出改變</b>，因為第五步全靠這個。</div>
+    </div>
+  </div>
+
+  <div class="farrow">↓</div>
+
+  <div class="floop">
+    <div class="floop-i">↺</div>
+    <div style="min-width:0;flex:1">
+      <div class="floop-t">回收，然後餵回第一步</div>
+      <div class="floop-en">Recycle · Back to Step 01</div>
+      <div class="floop-grid">
+        <div class="floop-item"><b>見證</b>　拿到前後對照，回推到 01 當素材</div>
+        <div class="floop-item"><b>常被問的問題</b>　錄成單元，變成低價課的內容</div>
+        <div class="floop-item"><b>他們的原話</b>　直接變成下一支影片的開頭</div>
+        <div class="floop-item"><b>每跑一輪</b>　01 的素材更強，低價課更完整</div>
+      </div>
+      <div class="floop-foot">
+        這就是為什麼<b>要先做高單價那條</b>：它同時餵飽第 01 步和左邊那條低價路線。反過來先做低價，第五步生不出東西。
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ===== 2. 共同基礎 ===== -->
 <section id="s1">
 <div class="rule">
-  <div class="kicker">01 · 共同基礎 Shared Base</div>
+  <div class="kicker">02 · 共同基礎 Shared Base</div>
   <h2>兩個方案共用的基礎</h2>
   <div class="h2en">What Both Plans Have in Common</div>
 </div>
@@ -496,7 +651,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 2. 兩個方案 ===== -->
 <section id="s2">
 <div class="rule">
-  <div class="kicker">02 · 方案 The Two Plans</div>
+  <div class="kicker">03 · 方案 The Two Plans</div>
   <h2>兩個方案</h2>
   <div class="h2en">Plan A vs. Plan B</div>
 </div>
@@ -600,7 +755,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 3. 對照 ===== -->
 <section id="s3">
 <div class="rule">
-  <div class="kicker">03 · 對照 Side by Side</div>
+  <div class="kicker">04 · 對照 Side by Side</div>
   <h2>兩個方案，直接對照</h2>
   <div class="h2en">The Same Three Months, Compared</div>
 </div>
@@ -638,7 +793,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 4. 三步 ===== -->
 <section id="s4">
 <div class="rule">
-  <div class="kicker">04 · 路徑 The Path</div>
+  <div class="kicker">05 · 路徑 The Path</div>
   <h2>選 B 之後，接下來三步</h2>
   <div class="h2en">If You Pick B: The Three Steps</div>
 </div>
@@ -732,7 +887,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 5. 課綱 ===== -->
 <section id="s5">
 <div class="rule">
-  <div class="kicker">05 · 課綱 Curriculum</div>
+  <div class="kicker">06 · 課綱 Curriculum</div>
   <h2>課程內容（兩案相同）</h2>
   <div class="h2en">Seven Modules, Identical in Both Plans</div>
 </div>
@@ -818,7 +973,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 6. 三個月時程 ===== -->
 <section id="s6">
 <div class="rule">
-  <div class="kicker">06 · 時程 Timeline</div>
+  <div class="kicker">07 · 時程 Timeline</div>
   <h2>三個月怎麼走</h2>
   <div class="h2en">The Twelve Weeks</div>
 </div>
@@ -883,7 +1038,7 @@ footer a:hover{text-decoration:underline;}
 <!-- ===== 7. 時間 ===== -->
 <section id="s7">
 <div class="rule">
-  <div class="kicker">07 · 時間 Hours</div>
+  <div class="kicker">08 · 時間 Hours</div>
   <h2>你到底要花多少時間</h2>
   <div class="h2en">What It Actually Costs You in Hours</div>
 </div>
