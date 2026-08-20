@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Qi Flow Wellness｜完整規劃 Complete Plan</title>
+<style>
+:root{
+  --ink:#121A18;--ink-2:#3D4B47;--muted:#6E7A75;
+  --bg:#EBEFE9;--surface:#F8FAF6;--white:#FFFFFF;
+  --hair:#D2DBD2;--hair-2:#BECABE;
+  --jade:#2C6155;--jade-lt:#EAF0EC;
+  --cinnabar:#A8352B;--cinnabar-lt:#FCF7F6;--moxa:#8C7B3E;
+  --serif:"Songti TC","Noto Serif TC","Source Han Serif TC","Songti SC","SimSun",serif;
+  --sans:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"SF Mono","JetBrains Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(16px,4vw,34px);
+  --gap:clamp(12px,1.6vw,16px);
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);
+  font-size:clamp(15px,0.42vw + 13.7px,16.5px);
+  line-height:1.8;overflow-x:hidden;
+}
+
+/* ===== bilingual helpers ===== */
+.en{font-family:var(--mono);font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400;}
+.en-p{display:block;font-size:.86em;line-height:1.65;color:var(--muted);margin-top:7px;}
+
+/* ===== sticky nav ===== */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(235,239,233,.93);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--hair);
+}
+.nav-in{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:0 var(--pad);min-height:50px;}
+.nav-doc{display:flex;gap:4px;flex:none;}
+.nav-doc a{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  padding:5px 9px;border:1px solid var(--hair-2);border-radius:2px;
+  text-decoration:none;color:var(--muted);white-space:nowrap;
+}
+.nav-doc a:hover{border-color:var(--jade);color:var(--jade);}
+.nav-doc a.cur{background:var(--jade);border-color:var(--jade);color:#fff;}
+.nav-links{
+  display:flex;gap:2px;margin-left:auto;
+  overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);
+}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{
+  font-size:12px;color:var(--ink-2);text-decoration:none;
+  padding:5px 9px;border-radius:2px;white-space:nowrap;scroll-snap-align:start;
+  transition:background .16s,color .16s;
+}
+.nav-links a:hover{color:var(--jade);background:var(--jade-lt);}
+.nav-links a.on{color:#fff;background:var(--jade);}
+.nav-print{
+  margin-left:4px;flex:none;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  padding:5px 10px;border:1px solid var(--hair-2);background:transparent;
+  color:var(--muted);border-radius:2px;cursor:pointer;
+}
+.nav-print:hover{border-color:var(--jade);color:var(--jade);}
+
+/* ===== layout ===== */
+.wrap{max-width:1060px;margin:0 auto;padding:0 var(--pad) clamp(70px,9vw,120px);}
+section{scroll-margin-top:64px;}
+
+header.top{padding:clamp(40px,7vw,74px) 0 0;}
+.brandline{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.brandline::after{content:"";flex:1;height:1px;background:var(--hair-2);}
+h1{font-family:var(--serif);font-size:clamp(28px,4.6vw,46px);line-height:1.32;font-weight:600;margin:0 0 6px;letter-spacing:-.005em;}
+h1 em{font-style:normal;color:var(--cinnabar);}
+.h1en{font-family:var(--mono);font-size:clamp(11px,1.2vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;line-height:1.7;}
+.lede{font-size:1em;color:var(--ink-2);max-width:60ch;margin:0;}
+
+/* ===== at a glance ===== */
+.glance{margin-top:clamp(26px,4vw,40px);display:flex;flex-wrap:wrap;gap:10px;}
+.g{flex:1 1 132px;background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:15px 16px 14px;}
+.gn{font-family:var(--mono);font-size:clamp(20px,2.4vw,25px);color:var(--cinnabar);line-height:1.15;}
+.gn small{font-size:.52em;color:var(--muted);font-family:var(--sans);margin-left:2px;}
+.gl{font-size:13px;color:var(--ink-2);margin-top:5px;line-height:1.5;}
+.gl .en{display:block;font-size:9.5px;margin-top:2px;}
+
+/* ===== section head ===== */
+.rule{margin:clamp(46px,7vw,84px) 0 0;}
+.kicker{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cinnabar);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.kicker::after{content:"";flex:1;height:1px;background:var(--hair-2);}
+.rule h2{font-family:var(--serif);font-size:clamp(21px,2.9vw,28px);font-weight:600;margin:0;line-height:1.36;}
+.h2en{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+.rule-sub{font-size:.93em;color:var(--ink-2);margin:15px 0 20px;max-width:66ch;}
+.rule-sub b{color:var(--ink);font-weight:600;}
+
+/* ===== positioning ===== */
+.pos{background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:clamp(22px,3vw,32px);}
+.pos-line{font-family:var(--serif);font-size:clamp(19px,2.9vw,26px);line-height:1.6;font-weight:600;margin:0 0 6px;}
+.pos-line em{font-style:normal;color:var(--cinnabar);}
+.pos-lineen{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--muted);line-height:1.7;margin-bottom:22px;}
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:10px;margin-bottom:18px;}
+.chip{border:1px solid var(--hair-2);border-top:2px solid var(--jade);border-radius:2px;padding:13px 14px;background:var(--surface);}
+.chip .cn{font-size:.88em;font-weight:600;line-height:1.45;margin-bottom:3px;}
+.chip .cy{font-family:var(--mono);font-size:11px;color:var(--jade);letter-spacing:.04em;}
+.chip .ce{font-family:var(--mono);font-size:9.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;line-height:1.5;margin-top:4px;}
+.pos-note{font-size:.87em;color:var(--ink-2);border-left:2px solid var(--cinnabar);padding-left:14px;line-height:1.75;}
+.pos-note b{color:var(--cinnabar);}
+
+/* ===== three layers ===== */
+.layers{border:1px solid var(--hair);border-radius:3px;overflow:hidden;background:var(--white);}
+.lyr{display:grid;grid-template-columns:172px minmax(0,1fr) 220px;border-bottom:1px solid var(--hair);}
+.lyr:last-of-type{border-bottom:none;}
+.lyr-name{padding:20px;color:#fff;display:flex;flex-direction:column;justify-content:center;}
+.l1 .lyr-name{background:#5E8478;}
+.l2 .lyr-name{background:#3F6D60;}
+.l3 .lyr-name{background:#22443C;}
+.lyr-depth{font-family:var(--mono);font-size:10px;letter-spacing:.14em;opacity:.75;text-transform:uppercase;}
+.lyr-title{font-family:var(--serif);font-size:clamp(19px,2.2vw,23px);font-weight:600;margin-top:4px;line-height:1.25;}
+.lyr-en{font-family:var(--mono);font-size:11px;letter-spacing:.1em;opacity:.7;margin-top:3px;}
+.lyr-body{padding:20px 22px;}
+.quote{font-family:var(--serif);font-size:.97em;color:var(--ink);line-height:1.75;border-left:2px solid var(--cinnabar);padding-left:14px;margin:0 0 12px;}
+.quote .en-p{font-family:var(--sans);}
+.fix{font-size:.87em;color:var(--ink-2);line-height:1.7;}
+.fix b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--jade);display:block;margin-bottom:3px;font-weight:400;}
+.lyr-comp{padding:20px 22px;background:var(--surface);border-left:1px solid var(--hair);font-size:.84em;}
+.lyr-comp .ct{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;line-height:1.6;}
+.mark{font-size:19px;line-height:1;margin-bottom:5px;display:block;}
+.mark.yes{color:var(--muted);}
+.mark.no{color:var(--cinnabar);}
+.lyr-comp .cd{color:var(--ink-2);line-height:1.6;}
+.layers-foot{background:var(--ink);color:#DFE7DF;padding:20px 24px;font-size:.92em;line-height:1.75;}
+.layers-foot b{color:#E8A49B;}
+.layers-foot .en-p{color:#93A49C;}
+
+/* ===== topic map table ===== */
+.maptbl{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--hair);border-radius:3px;font-size:.88em;}
+.maptbl th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400;text-align:left;padding:11px 16px;background:var(--surface);border-bottom:1px solid var(--hair);}
+.maptbl td{padding:14px 16px;border-bottom:1px solid var(--hair);vertical-align:top;color:var(--ink-2);line-height:1.7;}
+.maptbl tr:last-child td{border-bottom:none;}
+.maptbl td.n{white-space:nowrap;}
+.maptbl td.t{color:var(--ink);font-weight:600;}
+.maptbl td.t .sub{font-weight:400;font-size:.9em;color:var(--muted);display:block;line-height:1.6;}
+.maptbl td.t .ten{font-family:var(--mono);font-weight:400;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-top:2px;}
+.pill{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:2px 8px;border-radius:2px;white-space:nowrap;}
+.pill.h{background:#E4EDE9;color:#2C6155;}
+.pill.s{background:#E8EAD8;color:#6E6A2E;}
+.pill.r{background:#F4E3E0;color:#8E2C23;}
+.pill.n{background:#EDE7DC;color:#7A5F32;}
+
+/* ===== two tracks ===== */
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--gap);}
+.trk{background:var(--white);border:1px solid var(--hair);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;}
+.trk-head{padding:18px 22px 16px;color:#fff;}
+.trk.a .trk-head{background:#7E6046;}
+.trk.b .trk-head{background:#2C6155;}
+.trk-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;}
+.trk-name{font-family:var(--serif);font-size:clamp(18px,2.2vw,21px);font-weight:600;margin-top:2px;}
+.trk-nameen{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.72;margin-top:2px;}
+.trk-when{font-family:var(--mono);font-size:11px;margin-top:7px;opacity:.9;letter-spacing:.04em;}
+.trk-body{padding:18px 22px 20px;display:flex;flex-direction:column;flex:1;}
+.trk-body ul{list-style:none;margin:0 0 14px;padding:0;flex:1;}
+.trk-body li{font-size:.86em;color:var(--ink-2);padding:4px 0 4px 17px;position:relative;line-height:1.65;}
+.trk-body li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:var(--hair-2);}
+.trk.a li::before{background:#7E6046;}
+.trk.b li::before{background:var(--jade);}
+.trk-money{padding-top:13px;border-top:1px solid var(--hair);font-family:var(--mono);font-size:1em;color:var(--cinnabar);}
+.trk-money small{display:block;font-family:var(--sans);font-size:.8em;color:var(--muted);margin-top:3px;letter-spacing:0;line-height:1.6;}
+.tracks-note{margin-top:var(--gap);background:var(--ink);color:#DFE7DF;border-radius:3px;padding:20px 24px;font-size:.92em;line-height:1.75;}
+.tracks-note b{color:#E8A49B;}
+.tracks-note .en-p{color:#93A49C;}
+
+/* ===== funnel ===== */
+.funnel{background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:clamp(20px,3vw,30px);}
+.frow{display:grid;grid-template-columns:minmax(0,44%) minmax(0,1fr);gap:18px;align-items:center;margin-bottom:13px;}
+.frow:last-of-type{margin-bottom:0;}
+.fbar{height:clamp(42px,5vw,54px);border-radius:2px;display:flex;align-items:center;padding:0 16px;color:#fff;font-family:var(--mono);font-size:clamp(13px,1.5vw,15px);white-space:nowrap;}
+.f1{width:100%;background:#2C6155;}.f2{width:82%;background:#3A6F62;}
+.f3{width:64%;background:#4B7D70;}.f4{width:44%;background:#7E6046;}
+.f5{width:30%;background:var(--cinnabar);}
+.flabel{font-size:.87em;color:var(--ink-2);line-height:1.55;min-width:0;}
+.flabel b{display:block;color:var(--ink);font-weight:600;font-size:1.05em;}
+.flabel .en{display:block;font-size:9.5px;margin-top:1px;}
+.frate{font-family:var(--mono);font-size:11px;color:var(--jade);letter-spacing:.05em;margin-top:3px;display:block;}
+.fnote{margin-top:20px;padding-top:17px;border-top:1px solid var(--hair);font-size:.86em;color:var(--muted);}
+.fnote b{color:var(--ink-2);}
+
+/* ===== legend ===== */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 18px;font-size:.84em;color:var(--ink-2);}
+.legend span{display:flex;align-items:center;gap:7px;}
+.legend i{width:9px;height:9px;border-radius:50%;flex:none;}
+.legend .dot-you{background:var(--cinnabar);}
+.legend .dot-auto{background:var(--jade);}
+
+/* ===== five stages ===== */
+.stage{background:var(--white);border:1px solid var(--hair);border-radius:3px;margin-bottom:var(--gap);overflow:hidden;}
+.stage-head{display:flex;gap:15px;align-items:flex-start;padding:20px 22px 16px;border-bottom:1px solid var(--hair);}
+.num{flex:0 0 36px;height:36px;border-radius:50%;border:1.5px solid var(--cinnabar);color:var(--cinnabar);display:grid;place-items:center;font-family:var(--mono);font-size:13px;margin-top:3px;}
+.head-text h3{font-family:var(--serif);font-size:clamp(18px,2.1vw,21px);font-weight:600;margin:0 0 2px;line-height:1.4;}
+.head-text .h3en{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);margin-bottom:5px;}
+.head-text p{margin:0;font-size:.86em;color:var(--muted);line-height:1.6;}
+.split{display:grid;grid-template-columns:1fr 1fr;}
+.col{padding:18px 22px 20px;}
+.col + .col{border-left:1px solid var(--hair);background:var(--jade-lt);}
+.col.you{background:var(--cinnabar-lt);}
+.col h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 11px;font-weight:400;}
+.col.you h4{color:var(--cinnabar);}
+.col.auto h4{color:var(--jade);}
+.col ul{list-style:none;margin:0;padding:0;}
+.col li{font-size:.87em;color:var(--ink-2);padding:5px 0 5px 18px;position:relative;line-height:1.65;}
+.col li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;border-radius:50%;}
+.col.you li::before{background:var(--cinnabar);}
+.col.auto li::before{background:var(--jade);}
+.col li b{color:var(--ink);font-weight:600;}
+.stage-foot{padding:12px 22px;background:var(--surface);border-top:1px solid var(--hair);font-size:.82em;color:var(--muted);display:flex;gap:8px 22px;flex-wrap:wrap;line-height:1.6;}
+.stage-foot b{color:var(--ink-2);font-weight:600;}
+
+/* ===== modules ===== */
+.mods{border:1px solid var(--hair);border-radius:3px;overflow:hidden;}
+.mod{display:grid;grid-template-columns:52px minmax(0,1.1fr) minmax(0,1fr);background:var(--white);border-top:1px solid var(--hair);}
+.mod:first-child{border-top:none;}
+.mod.star{background:var(--cinnabar-lt);}
+.mod-n{padding:18px 0 18px 20px;font-family:var(--mono);font-size:12px;color:var(--jade);}
+.mod.star .mod-n{color:var(--cinnabar);}
+.mod-l{padding:17px 20px 18px 4px;}
+.mod-t{font-size:1em;font-weight:600;margin-bottom:1px;line-height:1.5;}
+.mod-ten{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.mod-d{font-size:.85em;color:var(--muted);line-height:1.65;}
+.mod-d b{color:var(--ink-2);}
+.mod-r{padding:17px 22px 18px;border-left:1px solid var(--hair);}
+.mod-r .rt{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.mod-r .rq{font-family:var(--serif);font-size:.88em;color:var(--ink-2);line-height:1.65;}
+.badge{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;padding:2px 7px;border:1px solid var(--cinnabar);color:var(--cinnabar);border-radius:2px;margin-left:8px;vertical-align:2px;white-space:nowrap;}
+
+/* ===== ladder ===== */
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:var(--gap);}
+.lad{background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:19px 19px 21px;display:flex;flex-direction:column;}
+.lad.main{border-color:var(--cinnabar);box-shadow:0 0 0 1px var(--cinnabar) inset;}
+.lad.side{border-top:3px solid var(--moxa);}
+.lad-tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
+.lad.main .lad-tag{color:var(--cinnabar);}
+.lad.side .lad-tag{color:var(--moxa);}
+.lad-name{font-family:var(--serif);font-size:clamp(16px,1.8vw,18px);font-weight:600;line-height:1.4;margin-bottom:2px;}
+.lad-nameen{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;line-height:1.5;}
+.lad-price{font-family:var(--mono);font-size:clamp(21px,2.5vw,25px);color:var(--cinnabar);margin-bottom:10px;}
+.lad-desc{font-size:.84em;color:var(--ink-2);line-height:1.7;flex:1;}
+.lad-desc b{color:var(--ink);}
+.lad-for{margin-top:12px;padding-top:10px;border-top:1px solid var(--hair);font-size:.78em;color:var(--muted);line-height:1.6;}
+.lad-for .en{display:block;margin-top:2px;}
+
+/* ===== time ===== */
+.timegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap);}
+.tcard{background:var(--white);border:1px solid var(--hair);border-radius:3px;padding:21px 22px;}
+.tcard.hi{border-left:3px solid var(--cinnabar);}
+.tcard h4{font-family:var(--serif);font-size:clamp(17px,1.9vw,19px);margin:0 0 2px;font-weight:600;}
+.tcard .h4en{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.tcard .when{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--jade);margin:9px 0 12px;line-height:1.6;}
+.tcard .big{font-family:var(--mono);font-size:clamp(26px,3.4vw,32px);color:var(--cinnabar);line-height:1.2;}
+.tcard .big small{font-size:14px;color:var(--muted);font-family:var(--sans);}
+.tcard .bigsub{font-size:.82em;color:var(--muted);margin-bottom:14px;line-height:1.6;}
+.tcard ul{list-style:none;margin:0;padding:0;}
+.tcard li{font-size:.85em;color:var(--ink-2);padding:4px 0 4px 16px;position:relative;line-height:1.65;}
+.tcard li::before{content:"–";position:absolute;left:0;color:var(--hair-2);}
+.tcard li b{color:var(--ink);}
+
+/* ===== callout ===== */
+.callout{background:var(--white);border:1px solid var(--hair);border-left:3px solid var(--cinnabar);border-radius:3px;padding:clamp(20px,2.6vw,26px);margin-top:var(--gap);font-size:.9em;color:var(--ink-2);line-height:1.8;}
+.callout b{color:var(--ink);}
+.callout .ct2{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinnabar);margin-bottom:9px;}
+
+/* ===== money ===== */
+.money{background:var(--ink);color:#DFE7DF;border-radius:3px;padding:clamp(22px,3vw,30px);}
+.msec{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#7E9C90;margin:0 0 4px;line-height:1.7;}
+.msec.two{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.09);}
+.mrow:last-of-type{border-bottom:none;}
+.mname{font-size:.92em;}
+.mname .men{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#7F918A;margin-top:2px;}
+.mname small{display:block;color:#8B9C94;font-size:.85em;line-height:1.5;margin-top:2px;}
+.mval{font-family:var(--mono);font-size:.95em;color:#E8A49B;white-space:nowrap;}
+.mtotal{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);display:flex;justify-content:space-between;align-items:baseline;gap:16px;}
+.mtotal .mname{font-size:.98em;color:#fff;}
+.mtotal .mval{font-size:1.3em;color:#fff;}
+.mfoot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);font-size:.85em;color:#8B9C94;line-height:1.85;}
+.mfoot b{color:#E8A49B;}
+
+/* ===== timeline ===== */
+.tl{border-left:2px solid var(--hair-2);margin-left:8px;padding-left:26px;}
+.tlitem{position:relative;padding-bottom:25px;}
+.tlitem:last-child{padding-bottom:0;}
+.tlitem::before{content:"";position:absolute;left:-33px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--jade);}
+.tlitem.now::before{background:var(--cinnabar);border-color:var(--cinnabar);}
+.tlitem.pause::before{background:var(--bg);border-color:var(--moxa);}
+.tlwhen{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--jade);}
+.tlitem.now .tlwhen{color:var(--cinnabar);}
+.tlitem.pause .tlwhen{color:var(--moxa);}
+.tltitle{font-size:.98em;font-weight:600;margin:2px 0 1px;line-height:1.5;}
+.tltitleen{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.tldesc{font-size:.88em;color:var(--ink-2);line-height:1.7;}
+.tldesc b{color:var(--ink);}
+
+/* ===== closing ===== */
+.closing{margin-top:clamp(44px,6vw,64px);padding:clamp(22px,3vw,30px);background:var(--white);border:1px solid var(--hair);border-left:3px solid var(--cinnabar);border-radius:3px;}
+.closing .q{font-family:var(--serif);font-size:clamp(18px,2.3vw,21px);font-weight:600;margin:0 0 4px;line-height:1.5;}
+.closing .qen{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.closing p{margin:0 0 10px;font-size:.92em;color:var(--ink-2);}
+.closing p:last-child{margin-bottom:0;}
+.closing b{color:var(--ink);}
+.pull{font-family:var(--serif);font-size:clamp(17px,2.2vw,20px);color:var(--cinnabar);line-height:1.6;margin:14px 0 4px;}
+.pullen{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);margin-bottom:16px;}
+
+footer a{color:var(--jade);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+footer{margin-top:clamp(40px,5vw,56px);padding-top:18px;border-top:1px solid var(--hair-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--muted);display:flex;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;}
+
+/* =========================================================
+   RESPONSIVE — one layout, no toggle
+   ========================================================= */
+@media (max-width:940px){
+  .lyr{grid-template-columns:150px minmax(0,1fr);}
+  .lyr-comp{grid-column:1/-1;border-left:none;border-top:1px solid var(--hair);display:flex;gap:14px;align-items:flex-start;}
+  .lyr-comp .ct{margin-bottom:0;flex:0 0 auto;max-width:150px;}
+  .mark{margin-bottom:0;}
+  .mod{grid-template-columns:48px minmax(0,1fr);}
+  .mod-r{grid-column:1/-1;border-left:none;border-top:1px dashed var(--hair);padding:15px 20px;}
+}
+@media (max-width:820px){
+  .maptbl,.maptbl tbody,.maptbl tr,.maptbl td{display:block;width:100%;}
+  .maptbl thead{display:none;}
+  .maptbl tr{border-bottom:1px solid var(--hair);padding:15px 16px;}
+  .maptbl tr:last-child{border-bottom:none;}
+  .maptbl td{border:none;padding:3px 0;}
+  .maptbl td.n{padding:6px 0;}
+  .maptbl td.w::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:2px;
+  }
+}
+@media (max-width:720px){
+  .nav-in{padding-left:12px;padding-right:12px;gap:8px;}
+
+  .lyr{grid-template-columns:1fr;}
+  .lyr-name{flex-direction:row;align-items:baseline;gap:10px;padding:13px 18px;flex-wrap:wrap;}
+  .lyr-title{margin-top:0;}
+  .lyr-en{margin-top:0;margin-left:auto;}
+  .lyr-body{padding:17px 18px;}
+  .lyr-comp{padding:15px 18px;flex-direction:column;gap:6px;}
+  .lyr-comp .ct{max-width:none;}
+  .layers-foot{padding:18px;}
+
+  .frow{grid-template-columns:1fr;gap:8px;margin-bottom:20px;}
+  .fbar{order:2;height:36px;font-size:13px;padding:0 13px;}
+  .flabel{order:1;}
+
+  .stage-head{padding:17px 17px 15px;gap:12px;}
+  .split{grid-template-columns:1fr;}
+  .col{padding:17px;}
+  .col + .col{border-left:none;border-top:1px solid var(--hair);}
+  .stage-foot{padding:11px 17px;flex-direction:column;gap:4px;}
+
+  .mod-n{padding:16px 0 0 16px;}
+  .mod-l{padding:14px 16px 16px 2px;}
+  .badge{display:block;margin:6px 0 0;width:fit-content;}
+
+  .mrow{gap:12px;}
+  .mname{flex:1 1 auto;min-width:0;}
+  .mval{flex:0 0 auto;}
+
+  .tl{padding-left:22px;}
+  .tlitem::before{left:-29px;}
+  footer{flex-direction:column;gap:5px;}
+}
+
+@media print{
+  .nav{display:none;}
+  body{background:#fff;font-size:10.5pt;}
+  .wrap{max-width:none;padding:0;}
+  .stage,.lad,.tcard,.mod,.layers,.funnel,.money,.closing,.trk,.pos,.callout{break-inside:avoid;}
+  .rule{break-after:avoid;}
+  .money,.tracks-note,.layers-foot{background:#121A18 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .lyr-name,.trk-head,.fbar{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="nav-doc">
+      <a href="./">兩個方案</a>
+      <a href="./full-plan.html" class="cur">完整規劃</a>
+    </div>
+    <div class="nav-links" id="navlinks">
+      <a href="#s1">定位 Position</a>
+      <a href="#s2">三層 Layers</a>
+      <a href="#s3">主題 Topics</a>
+      <a href="#s4">雙線 Tracks</a>
+      <a href="#s5">路徑 Funnel</a>
+      <a href="#s6">五步 Stages</a>
+      <a href="#s7">課綱 Course</a>
+      <a href="#s8">產品 Offers</a>
+      <a href="#s9">時間 Time</a>
+      <a href="#s10">收入 Revenue</a>
+      <a href="#s11">順序 Roadmap</a>
+    </div>
+    <button class="nav-print" id="printbtn" type="button">PDF</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="brandline">完整規劃　COMPLETE PLAN　·　2026 H2</div>
+  <h1>先讓診間滿起來，<br>課程是<em>順便長出來的資產</em>。</h1>
+  <p class="h1en">Fill the Clinic First. The Course Becomes an Asset Along the Way.</p>
+  <p class="lede">
+    同一批內容做兩件事：對北美同業建立教學品牌，對多倫多在地帶進預約。前三個月的成果來自診間，課程在明年 1 月開賣，那是北美按摩師換照與進修的旺季。
+    <span class="en-p">One body of content doing two jobs: building a teaching brand with North American therapists, and driving bookings locally in Toronto. The first three months are measured by the clinic. The course launches in January, peak season for CE credits and license renewal in North America.</span>
+  </p>
+
+  <div class="glance">
+    <div class="g"><div class="gn">2</div><div class="gl">條收入線<span class="en">Revenue Lines</span></div></div>
+    <div class="g"><div class="gn">7</div><div class="gl">個課程單元<span class="en">Modules</span></div></div>
+    <div class="g"><div class="gn">$197</div><div class="gl">主課定價（另有 $79 側門）<span class="en">Core Price</span></div></div>
+    <div class="g"><div class="gn">$2.4K<small>CAD</small></div><div class="gl">診間月增（第 2 個月起）<span class="en">Clinic / Month</span></div></div>
+    <div class="g"><div class="gn">$5.6K<small>USD</small></div><div class="gl">課程月收（1 月起）<span class="en">Course / Month</span></div></div>
+  </div>
+</header>
+
+<!-- ===== 1. 定位 ===== -->
+<section id="s1">
+<div class="rule">
+  <div class="kicker">01 · 定位 Positioning</div>
+  <h2>你的定位</h2>
+  <div class="h2en">One Sentence Everything Else Grows From</div>
+</div>
+<p class="rule-sub">
+  一句話，之後所有內容都從這句長出來。
+  <span class="en-p">One line. Every piece of content downstream comes out of it.</span>
+</p>
+
+<div class="pos">
+  <p class="pos-line">用東方的經絡與身體觀，教北美的專業按摩師<br><em>按得更有效，也做得更久。</em></p>
+  <div class="pos-lineen">Teaching North American massage therapists to work more effectively, and to last longer in the profession, through an Eastern view of the body.</div>
+  <div class="stack">
+    <div class="chip"><div class="cn">安省註冊按摩治療師</div><div class="cy">RMT · 11 年</div><div class="ce">Registered Massage Therapist, Ontario</div></div>
+    <div class="chip"><div class="cn">安省註冊針灸師</div><div class="cy">R.Ac · 6 年</div><div class="ce">Registered Acupuncturist, Ontario</div></div>
+    <div class="chip"><div class="cn">清邁傳統泰式按摩</div><div class="cy">學校＋盲人師傅</div><div class="ce">Traditional Thai Massage, Chiang Mai</div></div>
+    <div class="chip"><div class="cn">台灣註冊護理師</div><div class="cy">醫療背景</div><div class="ce">Registered Nurse, Taiwan</div></div>
+  </div>
+  <div class="pos-note">
+    <b>這四張放在一起，北美幾乎沒有第二個人有。</b>而且每一項都可查證。<br>
+    重點不是「我是亞洲人所以懂」，那句話講出來反而會讓北美同業防衛。要讓他們看著這四張執照，自己得出「她是真的有東方訓練，而且懂我們的執業環境」這個結論。<b>他自己想到的，比你講的可信十倍。</b>
+    <span class="en-p">These four credentials together are close to unique in North America, and every one is verifiable. Don't say “I'm Asian, so I understand this”; that puts North American peers on the defensive. Let them look at the credentials and reach the conclusion themselves. What they conclude on their own is ten times more convincing than what you claim.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 2. 三層 ===== -->
+<section id="s2">
+<div class="rule">
+  <div class="kicker">02 · 診斷 Diagnosis</div>
+  <h2>先看懂：你當年其實垮了三次</h2>
+  <div class="h2en">Your Burnout Happened on Three Different Layers</div>
+</div>
+<p class="rule-sub">
+  大部分人讀你的故事只看到「太累 → 身體壞掉 → 學針灸 → 好了」。但仔細看，<b>你的耗損是三個不同層次同時發生的，而你用了三套完全不同的方法解決。</b>這三層就是課程的骨架。
+  <span class="en-p">Most people read your story as “overworked → body broke → studied acupuncture → recovered.” Look closer: three separate layers failed at once, and you fixed each one differently. Those three layers are the spine of the course.</span>
+</p>
+
+<div class="layers">
+  <div class="lyr l1">
+    <div class="lyr-name">
+      <div class="lyr-depth">表層 · Surface</div>
+      <div class="lyr-title">手</div>
+      <div class="lyr-en">HANDS</div>
+    </div>
+    <div class="lyr-body">
+      <p class="quote">「一天接了 8 個病人，一回到家，躺在地上，動彈不得，沒有力氣起身。」
+        <span class="en-p">“Eight clients in one day. I got home, lay on the floor, and couldn't get back up.”</span>
+      </p>
+      <div class="fix"><b>你後來怎麼解決　How you fixed it</b>重新學身體力學：腳底、站姿、重心轉移、核心參與、關節排列。從「用手指製造力量」變成「用整個身體傳遞力量」。
+        <span class="en-p">Relearned body mechanics: stance, weight shift, core engagement, joint stacking. From generating force with the fingers to transmitting it through the whole body.</span>
+      </div>
+    </div>
+    <div class="lyr-comp">
+      <div class="ct">北美現有的課<br>Existing courses</div>
+      <div><span class="mark yes">✓</span><div class="cd">四家主要競品都教這層。這是最容易被比價的部分。<span class="en-p">All four major competitors teach this. Easiest layer to be price-compared on.</span></div></div>
+    </div>
+  </div>
+
+  <div class="lyr l2">
+    <div class="lyr-name">
+      <div class="lyr-depth">中層 · Middle</div>
+      <div class="lyr-title">排班</div>
+      <div class="lyr-en">SCHEDULE</div>
+    </div>
+    <div class="lyr-body">
+      <p class="quote">「經理又說要拜託我延長時間，我一轉身突然頭暈站不穩，兩眼一黑，撞到了旁邊的牆。」
+        <span class="en-p">“My manager asked me to extend again. I turned around, went dizzy, blacked out, and hit the wall.”</span>
+      </p>
+      <div class="fix"><b>你後來怎麼解決　How you fixed it</b>寫日記剖析自己的喜惡、認清界線並守住它、把工作改成兼職。你自己說過，這是最容易被別人忽略的一步。
+        <span class="en-p">Journaling to find her own limits, setting boundaries and holding them, moving to part-time. The step almost everyone skips.</span>
+      </div>
+    </div>
+    <div class="lyr-comp">
+      <div class="ct">北美現有的課<br>Existing courses</div>
+      <div><span class="mark no">✗</span><div class="cd">幾乎沒有人教。因為這需要真的垮過一次才講得出來。<span class="en-p">Almost nobody teaches it. You have to have actually burned out to teach it.</span></div></div>
+    </div>
+  </div>
+
+  <div class="lyr l3">
+    <div class="lyr-name">
+      <div class="lyr-depth">深層 · Deep</div>
+      <div class="lyr-title">底子</div>
+      <div class="lyr-en">RESERVES</div>
+    </div>
+    <div class="lyr-body">
+      <p class="quote">「頭髮大把大把地掉落，看了鏡子才發現自己有了鬼剃頭，還圓禿了兩處地方。」
+        <span class="en-p">“My hair came out in handfuls. In the mirror I found two bald patches.”</span>
+      </p>
+      <div class="fix"><b>你後來怎麼解決　How you fixed it</b>中醫養生：陰陽調和、氣血、天地人守則、氣功與太極、飲食睡眠的重新安排。這是針灸學校給你的東西。
+        <span class="en-p">TCM self-care: yin-yang balance, qi and blood, qigong and tai chi, rebuilt sleep and diet. What acupuncture school gave you.</span>
+      </div>
+    </div>
+    <div class="lyr-comp">
+      <div class="ct">北美現有的課<br>Existing courses</div>
+      <div><span class="mark no">✗</span><div class="cd">完全沒有。這需要中醫背景，也就是你的針灸執照。<span class="en-p">None. It requires a TCM background, i.e. your acupuncture license.</span></div></div>
+    </div>
+  </div>
+
+  <div class="layers-foot">
+    這就是為什麼你的課不會被拿去跟別人比價。<br>
+    別人只補第一層，<b>你三層都補得到</b>，而且只補一層是沒有用的，這正好是你自己的親身證明。
+    <span class="en-p">This is why your course can't be price-compared. Others patch layer one. You patch all three, and patching only one doesn't work, which your own story proves.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 3. 五主題對照 ===== -->
+<section id="s3">
+<div class="rule">
+  <div class="kicker">03 · 對照 Topic Map</div>
+  <h2>你上次提的五個主題，放在哪裡</h2>
+  <div class="h2en">Where Your Five Topics Belong</div>
+</div>
+<p class="rule-sub">
+  五個都用得上，只是位置不同。<b>有些適合做成課，有些更適合當前端內容。</b>
+  <span class="en-p">All five are usable, just in different places. Some belong inside the course; others work harder as front-end content.</span>
+</p>
+
+<table class="maptbl">
+  <thead><tr><th>你的主題　Your topic</th><th>屬於哪一層　Layer</th><th>用在哪裡　Where it goes</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="t">發力與人體工學<span class="sub">「150 公分也能按 200 公分的客人」</span><span class="ten">Force &amp; Body Mechanics</span></td>
+      <td class="n"><span class="pill h">手 HANDS</span></td>
+      <td class="w" data-label="用在哪裡 Where it goes">課程單元 2–4。<b>這句文案直接拿去當第一支影片的開頭</b>，具體、有畫面、一秒懂。</td>
+    </tr>
+    <tr>
+      <td class="t">十年實戰經驗分享<span class="ten">A Decade in Practice</span></td>
+      <td class="n"><span class="pill s">排班 SCHEDULE</span></td>
+      <td class="w" data-label="用在哪裡 Where it goes">課程單元 1 和 5，也是所有 email 和故事內容的來源。</td>
+    </tr>
+    <tr>
+      <td class="t">穴位入門<span class="ten">Point Work, Intro</span></td>
+      <td class="n"><span class="pill r">底子 RESERVES</span></td>
+      <td class="w" data-label="用在哪裡 Where it goes">課程單元 7，第二年展開成進階課。<b>框架要調整，見下方說明。</b></td>
+    </tr>
+    <tr>
+      <td class="t">常見客訴的穴位解法<span class="sub">肩頸、下背、肩膀緊</span><span class="ten">Point Work for Common Complaints</span></td>
+      <td class="n"><span class="pill r">底子 RESERVES</span></td>
+      <td class="w" data-label="用在哪裡 Where it goes"><b>前端內容的主力。</b>這類題材同業看得懂、一般客人也看得懂，是唯一能同時餵兩條線的內容。</td>
+    </tr>
+    <tr>
+      <td class="t">專業執業標準<span class="sub">Draping、tucking、界線</span><span class="ten">Professional Standards</span></td>
+      <td class="n"><span class="pill n">新增 NEW</span></td>
+      <td class="w" data-label="用在哪裡 Where it goes"><b>獨立成一堂小課。</b>美國多數州換照強制要求倫理學分，這是「不修不能換照」的類別，最容易賣的一堂。</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ct2">穴位內容的框架要調整　Reframe the point-work content</div>
+  你的針灸執照是<b>安大略省</b>的。但你的美國學生分散在 45 個以上不同的州，每一州對按摩師能做什麼的規定都不一樣。<br><br>
+  所以課程裡<b>不要說「這些你可以合法用」</b>，那等於在跨州提供法規建議，責任會回到你身上。<br><br>
+  改成講<b>壓力、角度與觸感技巧</b>，每堂開頭附一句「請依你所在州／省的執業範圍規定」。<b>教學內容一模一樣，只是框架換掉</b>，風險降到接近零。
+  <span class="en-p">Your acupuncture license is Ontario's, but your U.S. students are spread across 45+ states with different scope-of-practice rules. Never say “you may legally use this”; that is cross-border regulatory advice and the liability lands on you. Teach pressure, angle and palpation instead, and open each module with “follow the scope of practice in your own state or province.” Identical teaching, different frame, near-zero risk.</span>
+</div>
+</section>
+
+<!-- ===== 4. 兩條線 ===== -->
+<section id="s4">
+<div class="rule">
+  <div class="kicker">04 · 雙線 Two Tracks</div>
+  <h2>同一批內容，兩條收入線</h2>
+  <div class="h2en">One Body of Content, Two Revenue Lines</div>
+</div>
+<p class="rule-sub">
+  這是整個規劃的核心。<b>你不需要為了做課而暫停賺錢，兩件事是同一批工作長出來的。</b>
+  <span class="en-p">This is the heart of the plan. You never stop earning in order to build the course; both come out of the same work.</span>
+</p>
+
+<div class="tracks">
+  <div class="trk a">
+    <div class="trk-head">
+      <div class="trk-tag">第一條線　Track 1</div>
+      <div class="trk-name">診間預約</div>
+      <div class="trk-nameen">Clinic Bookings · Toronto</div>
+      <div class="trk-when">第 2 個月就開始進帳　Cash from month 2</div>
+    </div>
+    <div class="trk-body">
+      <ul>
+        <li>「常見客訴的穴位解法」這類內容，一般人也看得懂</li>
+        <li>多倫多在地的人看到，會直接想預約</li>
+        <li>你已經有工作室、已經有執照、已經能收錢，沒有任何前置作業</li>
+        <li>11–12 月是加拿大延伸醫療給付的年底歸零期，診間本來就會滿</li>
+      </ul>
+      <div class="trk-money">每月多 15–20 個預約<small>約 CAD $1,800–2,400／月　·　15–20 extra bookings per month</small></div>
+    </div>
+  </div>
+  <div class="trk b">
+    <div class="trk-head">
+      <div class="trk-tag">第二條線　Track 2</div>
+      <div class="trk-name">線上課程</div>
+      <div class="trk-nameen">Online Course · North America</div>
+      <div class="trk-when">明年 1 月開賣　Launches in January</div>
+    </div>
+    <div class="trk-body">
+      <ul>
+        <li>「發力與人體工學」「實戰經驗」這類內容，打的是北美同業</li>
+        <li>名單需要時間累積，不會三個月就爆發</li>
+        <li>1 月是北美按摩師換照與進修的旺季，這時候開賣最有利</li>
+        <li>課錄一次，賣好幾年，這是資產，不是收入</li>
+      </ul>
+      <div class="trk-money">每月約 17 位學員<small>約 USD $5,600／月（第二季起）　·　~17 students per month</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="tracks-note">
+  <b>前三個月看的是第一條線，不是第二條。</b><br>
+  課程需要時間累積名單，這是所有線上課的常態。但你的診間不需要，你今天就能收錢。所以前三個月的目標是<b>把診間先滿起來</b>，課程在這段時間安靜地錄好，1 月才正式上場。
+  <span class="en-p">Judge the first three months on Track 1, not Track 2. Every online course needs time to build a list; your clinic doesn't. Fill the clinic first while the course is quietly recorded in the background, then launch in January.</span>
+</div>
+</section>
+
+<!-- ===== 5. 漏斗 ===== -->
+<section id="s5">
+<div class="rule">
+  <div class="kicker">05 · 路徑 The Path</div>
+  <h2>課程這條線長這樣</h2>
+  <div class="h2en">One Month of Track 2, Top to Bottom</div>
+</div>
+<p class="rule-sub">
+  一個月的量。從上到下越來越少，這是正常的。最後留下來的，就是真的願意付錢的人。
+  <span class="en-p">Volume for a single month. The drop-off at each step is normal. Whoever is left at the bottom is who actually pays.</span>
+</p>
+
+<div class="funnel">
+  <div class="frow">
+    <div class="fbar f1">75,000</div>
+    <div class="flabel"><b>看到影片的人</b><span class="en">Video Views</span>滑到你的 Reels，或搜尋到你的 YouTube</div>
+  </div>
+  <div class="frow">
+    <div class="fbar f2">2,300</div>
+    <div class="flabel"><b>點進來的人</b><span class="en">Link Clicks</span>覺得「這在講我」，點了連結<span class="frate">▼ 約 3% 的觀看者</span></div>
+  </div>
+  <div class="frow">
+    <div class="fbar f3">700</div>
+    <div class="flabel"><b>做完檢測的人</b><span class="en">Quiz Completions · Leads</span>想知道自己漏在哪一層，留下 email<span class="frate">▼ 約 30% 的點擊者</span></div>
+  </div>
+  <div class="frow">
+    <div class="fbar f4">180</div>
+    <div class="flabel"><b>看完免費課的人</b><span class="en">Free Class Viewers</span>看完你 35 分鐘的教學影片<span class="frate">▼ 約 26% 的名單</span></div>
+  </div>
+  <div class="frow">
+    <div class="fbar f5">17</div>
+    <div class="flabel"><b>買課的人</b><span class="en">Students Enrolled</span>成為你的學員<span class="frate">▼ 約 9% 的觀看者</span></div>
+  </div>
+  <div class="fnote">
+    每 1,000 個看到影片的人，大約 1 個會成為學員。這在線上課程是正常比例，所以<b>影片的量比影片的完美度重要</b>。而同一批影片裡，多倫多在地的人會走另一條路：直接預約你的診間。
+    <span class="en-p">Roughly 1 student per 1,000 views. That ratio is normal, which is why volume of content beats perfection. Meanwhile the same videos send local Toronto viewers down the other path: straight to a booking.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 6. 五步 ===== -->
+<section id="s6">
+<div class="rule">
+  <div class="kicker">06 · 系統 The System</div>
+  <h2>五個步驟，各自在做什麼</h2>
+  <div class="h2en">Five Stages: What You Do vs. What Runs Itself</div>
+</div>
+<p class="rule-sub">
+  紅色是你要親自做的，綠色是設定好之後自己會跑的。注意紅色那欄大部分都寫著「一次性」。
+  <span class="en-p">Red is what you do by hand. Green runs on its own once it's set up. Note how much of the red column says “one time only.”</span>
+</p>
+<div class="legend">
+  <span><i class="dot-you"></i>你親自做　You do it</span>
+  <span><i class="dot-auto"></i>系統自動　Runs automatically</span>
+  <span><b>一次性</b>　= 做完一次，之後一直用　One-time build</span>
+</div>
+
+<div class="stage">
+  <div class="stage-head">
+    <div class="num">1</div>
+    <div class="head-text">
+      <h3>讓同行看見你，也讓在地客人看見你</h3>
+      <div class="h3en">Get Seen · Peers and Locals at Once</div>
+      <p>講給專業聽，但用大白話講，這樣兩邊都聽得懂</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="col you"><h4>你要做的　You</h4><ul>
+      <li><b>一週 3–4 支短影片</b>（一個月挑兩天，一天拍 6 支）</li>
+      <li>一個月 2 支 YouTube 長片，講得深一點</li>
+      <li>每週花點時間回留言和私訊</li>
+      <li>逐字稿和文案我寫好給你，你照著錄</li>
+    </ul></div>
+    <div class="col auto"><h4>系統自動做的　Automated</h4><ul>
+      <li>影片結尾固定兩個出口：同業去檢測、在地人去預約</li>
+      <li>YouTube 放著會一直有人搜尋到，一年後還在帶人</li>
+      <li>拿到北美教學資格後被列進官方課程目錄</li>
+    </ul></div>
+  </div>
+  <div class="stage-foot"><span><b>你每週的時間 Weekly：</b>約 4 小時</span><span><b>沿用原帳號</b>，不另開新的</span></div>
+</div>
+
+<div class="stage">
+  <div class="stage-head">
+    <div class="num">2</div>
+    <div class="head-text">
+      <h3>讓他知道自己漏在哪一層</h3>
+      <div class="h3en">Diagnose · The Quiz</div>
+      <p>三層耗損檢測：「你漏在手、排班，還是底子？」</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="col you"><h4>你要做的　You</h4><ul>
+      <li>出 15 道題，三層各 5 題（<b>一次性</b>）</li>
+      <li>錄三支結果解說影片，一層一支（<b>一次性</b>）</li>
+    </ul></div>
+    <div class="col auto"><h4>系統自動做的　Automated</h4><ul>
+      <li>自動算分，判斷他主要漏在哪一層</li>
+      <li>自動播放對應那一層的解說影片</li>
+      <li>自動把 email 收進名單</li>
+    </ul></div>
+  </div>
+  <div class="stage-foot"><span><b>你每週的時間 Weekly：</b>0</span><span><b>為什麼有力 Why it works：</b>大部分人會測出兩層或三層同時漏，這本身就證明了「只補一層沒有用」</span></div>
+</div>
+
+<div class="stage">
+  <div class="stage-head">
+    <div class="num">3</div>
+    <div class="head-text">
+      <h3>讓他認識你</h3>
+      <div class="h3en">Build Trust · Email Sequence</div>
+      <p>10 天內寄 7 封信，把三層的故事講完</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="col you"><h4>你要做的　You</h4><ul>
+      <li>提供素材，我寫成英文（<b>一次性</b>）</li>
+      <li>素材你已經有了：躺在地上那天、撞牆那次、浴缸掉髮那晚</li>
+    </ul></div>
+    <div class="col auto"><h4>系統自動做的　Automated</h4><ul>
+      <li>新名單進來自動從第一封開始寄</li>
+      <li>不用你按送出，不用記得誰寄到第幾封</li>
+      <li>一年後進來的人，收到同一套</li>
+    </ul></div>
+  </div>
+  <div class="stage-foot"><span><b>你每週的時間 Weekly：</b>0</span><span><b>關鍵 Key：</b>第 6 封才開賣，前 5 封只講故事和觀點</span></div>
+</div>
+
+<div class="stage">
+  <div class="stage-head">
+    <div class="num">4</div>
+    <div class="head-text">
+      <h3>讓他想上你的課</h3>
+      <div class="h3en">Convert · Free Class</div>
+      <p>一支 35 分鐘免費教學：不靠蠻力做深層治療</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="col you"><h4>你要做的　You</h4><ul>
+      <li>錄一支 35 分鐘免費教學（<b>一次性</b>）</li>
+      <li>裡面真的教東西：示範錯誤發力 vs 結構發力，加一個經絡觀點</li>
+    </ul></div>
+    <div class="col auto"><h4>系統自動做的　Automated</h4><ul>
+      <li>隨時可看，不用排時間開直播</li>
+      <li>看完自動給 72 小時優惠碼，到期自動失效</li>
+      <li>沒買的人自動收到提醒信</li>
+    </ul></div>
+  </div>
+  <div class="stage-foot"><span><b>你每週的時間 Weekly：</b>0</span><span><b>為什麼要真的教 Why teach for free：</b>他學到東西，才會相信付費版更有價值</span></div>
+</div>
+
+<div class="stage">
+  <div class="stage-head">
+    <div class="num">5</div>
+    <div class="head-text">
+      <h3>他成為你的學員</h3>
+      <div class="h3en">Enroll · The Course</div>
+      <p>七個單元、約 8 小時、附北美 8 個進修學分</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="col you"><h4>你要做的　You</h4><ul>
+      <li>錄好 7 個單元（<b>一次性</b>，約 3–4 個拍攝日）</li>
+      <li>每單元不超過 40 分鐘，寧可剛剛好也不要塞滿</li>
+      <li>每單元附一張自我檢查表</li>
+    </ul></div>
+    <div class="col auto"><h4>系統自動做的　Automated</h4><ul>
+      <li>收錢、開帳號、寄收據</li>
+      <li>單元分段解鎖，一週開一個</li>
+      <li><b>完課自動發學分證書</b></li>
+      <li>結帳自動推加購，買完自動推進階課</li>
+    </ul></div>
+  </div>
+  <div class="stage-foot"><span><b>你每週的時間 Weekly：</b>0–2 小時</span><span><b>完課率比內容量重要 Completion &gt; volume</b></span></div>
+</div>
+</section>
+
+<!-- ===== 7. 課綱 ===== -->
+<section id="s7">
+<div class="rule">
+  <div class="kicker">07 · 課綱 Curriculum</div>
+  <h2>課程內容</h2>
+  <div class="h2en">Seven Modules, Mapped to the Three Layers</div>
+</div>
+<p class="rule-sub">
+  七個單元，剛好對應三層。<b>右邊那欄是你錄影片時可以直接開場講的話</b>，都是你自己的原話，不用編。
+  <span class="en-p">Seven modules mapped onto the three layers. The right column is the opening line you can say on camera. All of it is already in your own words.</span>
+</p>
+
+<div class="mods">
+  <div class="mod">
+    <div class="mod-n">01</div>
+    <div class="mod-l">
+      <div class="mod-t">你不是不夠強</div>
+      <div class="mod-ten">It's Not About Strength</div>
+      <div class="mod-d">三層耗損的觀念、為什麼只練力氣沒有用</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「我以為只要更努力、更強壯就可以解決。結果我去重訓、去上更多課，身體反而垮得更快。」</div></div>
+  </div>
+  <div class="mod">
+    <div class="mod-n">02</div>
+    <div class="mod-l">
+      <div class="mod-t">力量從腳底開始</div>
+      <div class="mod-ten">Power Starts at the Floor</div>
+      <div class="mod-d">站姿、重心、治療床高度、身體排列。150 公分也能按 200 公分的客人。</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「一天最多接 8 個病人。有一天回家，我連站起來的力氣都沒有。」</div></div>
+  </div>
+  <div class="mod">
+    <div class="mod-n">03</div>
+    <div class="mod-l">
+      <div class="mod-t">用重量取代推力</div>
+      <div class="mod-ten">Bodyweight Instead of Push</div>
+      <div class="mod-d">重心轉移、核心、髖部、關節堆疊、呼吸</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「學會運用丹田和雙腳底盤來操演治療之後，整個過程輕鬆無負擔。」</div></div>
+  </div>
+  <div class="mod">
+    <div class="mod-n">04</div>
+    <div class="mod-l">
+      <div class="mod-t">什麼時候不要再用手指</div>
+      <div class="mod-ten">When to Stop Using Your Thumbs</div>
+      <div class="mod-d">拇指、手腕、前臂、手肘的切換時機</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「那段時間右手手指腫大，嚴重的時候完全無法彎曲。」</div></div>
+  </div>
+  <div class="mod star">
+    <div class="mod-n">05</div>
+    <div class="mod-l">
+      <div class="mod-t">學會說不，也是專業能力<span class="badge">只有你能教 ONLY YOU</span></div>
+      <div class="mod-ten">Boundaries Are a Clinical Skill</div>
+      <div class="mod-d">界線、排班設計、你的日記法、自我覺察。<b>這一單元不用拍動作示範</b>，錄製最省力，差異最大。</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「經理又說要延長時間，我一轉身突然頭暈，兩眼一黑，撞到旁邊的牆。」</div></div>
+  </div>
+  <div class="mod star">
+    <div class="mod-n">06</div>
+    <div class="mod-l">
+      <div class="mod-t">補回你的底子<span class="badge">只有你能教 ONLY YOU</span></div>
+      <div class="mod-ten">Rebuild Your Reserves</div>
+      <div class="mod-d">中醫養生的自我照顧：陰陽、氣血、飲食與睡眠節奏、氣功與太極入門</div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">「我每天都在照顧別人的身體，為什麼把自己的身體搞成這樣？」</div></div>
+  </div>
+  <div class="mod star">
+    <div class="mod-n">07</div>
+    <div class="mod-l">
+      <div class="mod-t">壓力、角度與點位<span class="badge">只有你能教 ONLY YOU</span></div>
+      <div class="mod-ten">Pressure, Angle and Points</div>
+      <div class="mod-d">近端與遠端點位的思考方式、為什麼要處理手腳和頭。<b>講技巧，不講法規範圍。</b></div>
+    </div>
+    <div class="mod-r"><div class="rt">開場故事　Opening story</div><div class="rq">病人的原話：「你的按摩很酸、很麻，雖然有一點痛，但是很有效。」</div></div>
+  </div>
+</div>
+
+<p class="rule-sub" style="margin-top:26px">
+  <b>七個單元要綁在一起賣，不要拆成三堂。</b>拆開賣，單元 2–4 就會被拿去跟別人的身體力學課比價，一定輸：人家便宜、有名、教了十幾年。綁在一起賣，前四個單元就變成附贈的，買家沒得比。
+  <span class="en-p">Sell all seven as one bundle. Split them up and modules 2–4 get price-compared against established body-mechanics courses, which you lose. Bundled, those four become the bonus and there is nothing to compare.</span>
+</p>
+<p class="rule-sub">
+  <b>單元 06 定位是「治療師的自我照顧」，不是醫療建議。</b>文案全程不做疾病診斷或療效宣稱。
+  <span class="en-p">Module 06 is positioned as self-care for therapists, not medical advice. No diagnostic or treatment claims anywhere in the copy.</span>
+</p>
+</section>
+
+<!-- ===== 8. 產品 ===== -->
+<section id="s8">
+<div class="rule">
+  <div class="kicker">08 · 產品 Offers</div>
+  <h2>你要賣的東西</h2>
+  <div class="h2en">The Product Ladder</div>
+</div>
+<p class="rule-sub">
+  第一年只跑前三個。進階課等第二年，用學員的真實問題來設計。
+  <span class="en-p">Year one runs only the first three. The advanced course waits for year two and gets built from real student questions.</span>
+</p>
+
+<div class="ladder">
+  <div class="lad">
+    <div class="lad-tag">免費　Free</div>
+    <div class="lad-name">三層耗損檢測</div>
+    <div class="lad-nameen">The 3-Layer Burnout Quiz</div>
+    <div class="lad-price">$0</div>
+    <div class="lad-desc">15 題、3 分鐘，告訴他漏在哪一層。不只是行銷工具，也是你整套觀點最好的說明書。</div>
+    <div class="lad-for">給：所有滑到影片的同行<span class="en">For: every therapist who sees a video</span></div>
+  </div>
+  <div class="lad side">
+    <div class="lad-tag">側門　Side Door</div>
+    <div class="lad-name">執業標準與界線</div>
+    <div class="lad-nameen">Standards, Draping &amp; Boundaries</div>
+    <div class="lad-price">$79</div>
+    <div class="lad-desc">Draping、tucking、界線，保護自己也保護客人。<b>對應美國多數州強制的倫理學分。</b>不用拍動作示範，錄製成本最低，而且是「不修不能換照」。</div>
+    <div class="lad-for">給：任何需要換照的美國按摩師<span class="en">For: any U.S. therapist renewing a license</span></div>
+  </div>
+  <div class="lad main">
+    <div class="lad-tag">主力產品　Core Offer</div>
+    <div class="lad-name">Hands · Schedule · Reserves</div>
+    <div class="lad-nameen">The Core Program · 8 CE Credits</div>
+    <div class="lad-price">$197</div>
+    <div class="lad-desc">七個單元、約 8 小時、附北美 8 個進修學分。三層一次補齊。結帳可加購「點位速查卡」$37。</div>
+    <div class="lad-for">給：入行 1–5 年、開始覺得身體吃不消的人<span class="en">For: therapists 1–5 years in, starting to hurt</span></div>
+  </div>
+  <div class="lad">
+    <div class="lad-tag">進階（第二年）　Year 2</div>
+    <div class="lad-name">經絡臨床應用</div>
+    <div class="lad-nameen">Meridians in Clinical Practice</div>
+    <div class="lad-price">$997</div>
+    <div class="lad-desc">把單元 07 展開成完整課程。<b>只賣給修完主力課的人。</b>沒有基礎直接學會學不會、會退款。</div>
+    <div class="lad-for">給：想真的把東方觀點用進手法的人<span class="en">For: grads of the core program only</span></div>
+  </div>
+</div>
+</section>
+
+<!-- ===== 9. 時間 ===== -->
+<section id="s9">
+<div class="rule">
+  <div class="kicker">09 · 時間 Time</div>
+  <h2>你到底要花多少時間</h2>
+  <div class="h2en">What This Actually Costs You in Hours</div>
+</div>
+<p class="rule-sub">
+  這是最重要的一段。因為你一週已經看 5.5 天的病人了。
+  <span class="en-p">The most important section, because you already see clients 5.5 days a week.</span>
+</p>
+
+<div class="timegrid">
+  <div class="tcard hi">
+    <h4>建置期</h4>
+    <div class="h4en">Build Phase</div>
+    <div class="when">8 月下旬 – 10 月底（實際約 7 週）<br>Late Aug – end of Oct · ~7 weeks</div>
+    <div class="big">10–12<small> 小時／週 hrs/wk</small></div>
+    <div class="bigsub">這段比較重，但只有一次<span class="en-p">Heavier, but only once.</span></div>
+    <ul>
+      <li>每週 3–4 支短影片（診間預約從這裡來）</li>
+      <li>錄 7 個單元，約 3–4 個拍攝日</li>
+      <li>錄免費教學和三支檢測解說影片</li>
+      <li>出 15 道檢測題、提供 7 封信的素材</li>
+      <li><b>送出北美教學資格申請（越早越好）</b></li>
+    </ul>
+  </div>
+  <div class="tcard">
+    <h4>維運期</h4>
+    <div class="h4en">Maintenance Phase</div>
+    <div class="when">明年 1 月起<br>From January onward</div>
+    <div class="big">6–8<small> 小時／週 hrs/wk</small></div>
+    <div class="bigsub">課錄完了，剩下的只有內容<span class="en-p">The course is built. All that's left is content.</span></div>
+    <ul>
+      <li>拍片：一個月兩天，一天拍 6 支</li>
+      <li>回留言和私訊：每週約 2 小時</li>
+      <li>回答學員問題：每週 0–2 小時</li>
+      <li>其他全部自動</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout">
+  <div class="ct2">兩個排程限制已經算進去了　Two constraints already factored in</div>
+  <b>9 月西雅圖兩週</b>：拍攝日往前壓，出發前先把 6–8 支影片拍好囤著，人不在照樣有內容在發。<br><br>
+  <b>11–12 月保險旺季</b>：那兩個月你的診間會滿檔，內容降到每週 1–2 支，全部用之前囤的。<b>那段時間你專心賺錢就好</b>，課程已經錄完躺在平台上，1 月才開賣。<br><br>
+  <b>一定要用集中拍攝日。</b>一個月挑兩天，一天拍完 6 支，其他日子完全不碰。不要每天擠一點，那條路你走過一次了。
+  <span class="en-p">Two weeks in Seattle in September: film ahead and bank 6–8 videos so posting continues while you're away. November–December is Canadian benefits season and the clinic will be full, so content drops to 1–2 posts a week, all from the bank. Earn during those months; the course is already recorded and waits for January. And always batch-film: two days a month, six videos a day, nothing on the other days.</span>
+</div>
+</section>
+
+<!-- ===== 10. 錢 ===== -->
+<section id="s10">
+<div class="rule">
+  <div class="kicker">10 · 收入 Revenue</div>
+  <h2>錢怎麼進來</h2>
+  <div class="h2en">Where the Money Comes From</div>
+</div>
+<p class="rule-sub">
+  兩條線的時間點不一樣。前三個月看第一條，第二條在明年。
+  <span class="en-p">The two tracks pay out on different clocks. Judge the first three months on Track 1; Track 2 starts next year.</span>
+</p>
+
+<div class="money">
+  <p class="msec">第一條線　診間預約（加幣）　Track 1 · Clinic bookings (CAD)</p>
+  <div class="mrow">
+    <div class="mname">每月多 15–20 個預約<span class="men">15–20 extra bookings / month</span><small>一節約 CAD $110–140，且多數可走延伸醫療給付</small></div>
+    <div class="mval">CAD $1,800–2,400／月</div>
+  </div>
+  <div class="mrow">
+    <div class="mname">11–12 月保險旺季<span class="men">Nov–Dec benefits season</span><small>年底給付歸零，診間本來就會滿</small></div>
+    <div class="mval">再往上</div>
+  </div>
+
+  <p class="msec two">第二條線　線上課程（美金 · 1 月起）　Track 2 · Online course (USD, from January)</p>
+  <div class="mrow">
+    <div class="mname">主課程<span class="men">Core course</span><small>七單元 · 8 個進修學分</small></div>
+    <div class="mval">$197</div>
+  </div>
+  <div class="mrow">
+    <div class="mname">結帳加購　點位速查卡<span class="men">Order bump · Point reference cards</span><small>約三分之一的人會勾選</small></div>
+    <div class="mval">+ 約 $13</div>
+  </div>
+  <div class="mrow">
+    <div class="mname">後續進階課<span class="men">Upsell · Advanced program</span><small>約每 8 位學員有 1 位會升級</small></div>
+    <div class="mval">+ 約 $120</div>
+  </div>
+  <div class="mtotal">
+    <div class="mname">平均每位學員帶來<span class="men">Average revenue per student</span></div>
+    <div class="mval">約 USD $330</div>
+  </div>
+
+  <div class="mfoot">
+    第二條線每月約 17 位學員 × $330 ≈ <b>USD $5,600／月</b>，第一年約 $55,000–65,000。<br>
+    <b>但前三個月的成果不看這條。</b>課程需要時間累積名單，這是所有線上課的常態。前三個月我們要讓你看到的是診間的變化，那是你今天就能收的錢。
+    <span class="en-p">Track 2: ~17 students × $330 ≈ USD $5,600/month, roughly $55K–65K in year one. But the first three months are not judged on this line. What you should see in that window is the clinic moving, because that is money you can collect today.</span>
+  </div>
+</div>
+</section>
+
+<!-- ===== 11. 順序 ===== -->
+<section id="s11">
+<div class="rule">
+  <div class="kicker">11 · 順序 Roadmap</div>
+  <h2>接下來的順序</h2>
+  <div class="h2en">What Happens First, Second, Third</div>
+</div>
+<p class="rule-sub">
+  不要同時做。照這個順序，每一步都建立在前一步的結果上。
+  <span class="en-p">Don't run these in parallel. Each step is built on what the previous one taught you.</span>
+</p>
+
+<div class="tl">
+  <div class="tlitem now">
+    <div class="tlwhen">8 月下旬　LATE AUGUST</div>
+    <div class="tltitle">帳號改版，開始每週 3–4 支</div>
+    <div class="tltitleen">Relaunch the account, 3–4 posts a week</div>
+    <div class="tldesc">沿用原帳號。三層各拍幾支，看哪一層最多同行有反應。同時送出北美教學資格申請，審核要時間，1 月要用就是現在要送。</div>
+  </div>
+  <div class="tlitem pause">
+    <div class="tlwhen">9 月　西雅圖兩週　SEPT · SEATTLE</div>
+    <div class="tltitle">出發前拍好囤著</div>
+    <div class="tltitleen">Bank content before you fly</div>
+    <div class="tldesc">人不在，內容照發。回來後接著跑，節奏不斷。</div>
+  </div>
+  <div class="tlitem">
+    <div class="tlwhen">10 月　OCTOBER</div>
+    <div class="tltitle">上線檢測，錄完七個單元</div>
+    <div class="tltitleen">Launch the quiz, finish filming</div>
+    <div class="tldesc">根據前面兩個月收到的真實問題錄課，不是憑空猜。同時用 Story 做市調，確認市場對哪個主題反應最大。診間的預約量應該在這時候開始有感。</div>
+  </div>
+  <div class="tlitem pause">
+    <div class="tlwhen">11–12 月　保險旺季　NOV–DEC</div>
+    <div class="tltitle">專心看診，內容降到低量</div>
+    <div class="tltitleen">Earn in the clinic, minimal posting</div>
+    <div class="tldesc">你的診間會滿檔，這是一年最好賺的兩個月。內容用囤的，課程躺在平台上不動。<b>這段時間不開賣。</b></div>
+  </div>
+  <div class="tlitem now">
+    <div class="tlwhen">明年 1 月　JANUARY</div>
+    <div class="tltitle">課程正式開賣</div>
+    <div class="tltitleen">The course goes on sale</div>
+    <div class="tldesc">1 月是北美按摩師換照與進修的旺季，需求集中在年初。這時候開賣，比 12 月有利得多。</div>
+  </div>
+  <div class="tlitem">
+    <div class="tlwhen">第 2 年　YEAR 2</div>
+    <div class="tltitle">開進階課，並且賣給診所和學校</div>
+    <div class="tltitleen">Advanced course, plus clinics and schools</div>
+    <div class="tldesc">診所老闆的痛點跟按摩師不一樣，他們怕的是治療師受傷離職、重新招人。等你手上有學員成果可以給他們看，這條線一次成交抵十次。</div>
+  </div>
+</div>
+</section>
+
+<div class="closing">
+  <p class="q">最後一件事</p>
+  <div class="qen">One Last Thing</div>
+  <p>你在故事裡寫過一句話，我建議直接當整個品牌的核心，一個字都不要改：</p>
+  <p class="pull">「先有餘力照顧自己，才有餘力照顧別人。」</p>
+  <div class="pullen">“You can only care for others once you have something left for yourself.”</div>
+  <p>三層結構就是這句話的方法論版本。故事、課綱、檢測、銷售頁全部從這一句長出來，整套就不會散。</p>
+  <p>整條路上，唯一無法交給系統的只有一件事：<b>出現在鏡頭前，把你已經知道的事講出來。</b>其他都可以自動。
+    <span class="en-p">Everything on this page can be automated except one thing: showing up on camera and saying what you already know.</span>
+  </p>
+</div>
+
+<footer>
+  <span>QI FLOW WELLNESS　·　完整規劃 COMPLETE PLAN</span>
+  <span>多倫多診間 TORONTO CLINIC　＋　北美線上課程 ONLINE COURSE　·　<a href="./">兩個方案 Two options →</a></span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var pb = document.getElementById('printbtn');
+  if(pb){ pb.addEventListener('click', function(){ window.print(); }); }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
+  var map = {}, targets = [];
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if(el){ map[el.id] = a; targets.push(el); }
+  });
+  if(!('IntersectionObserver' in window) || !targets.length) return;
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){ a.classList.remove('on'); });
+      var a = map[e.target.id];
+      if(a){
+        a.classList.add('on');
+        var box = a.parentNode;
+        if(box.scrollWidth > box.clientWidth){
+          var want = a.offsetLeft - box.clientWidth/2 + a.offsetWidth/2;
+          box.scrollTo({left:Math.max(0,want), behavior:'smooth'});
+        }
+      }
+    });
+  }, {rootMargin:'-55px 0px -70% 0px', threshold:0});
+
+  targets.forEach(function(t){ io.observe(t); });
+})();
+</script>
+</body>
+</html>
