@@ -184,28 +184,6 @@ h1 em{font-style:normal;color:var(--cinnabar);}
 .bfill.b{background:var(--cinnabar);}
 .bwin{font-family:var(--mono);font-size:10px;color:var(--cinnabar);letter-spacing:.06em;flex:none;}
 
-/* =========================================================
-   3-STEP LADDER
-   ========================================================= */
-.steps3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap);}
-.st{background:var(--white);border-radius:3px;display:flex;flex-direction:column;overflow:hidden;}
-.st.s1{border-top:3px solid var(--cinnabar);}
-.st.s2{border-top:3px solid #8E2C23;}
-.st.s3{border-top:3px solid var(--sage);}
-.st-head{padding:16px 18px 13px;}
-.st-no{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-.st-name{font-family:var(--serif);font-size:clamp(17px,2vw,19px);font-weight:600;margin:3px 0 1px;line-height:1.35;}
-.st-when{font-family:var(--mono);font-size:11px;color:var(--jade);letter-spacing:.04em;}
-.st-price{font-family:var(--mono);font-size:clamp(19px,2.3vw,22px);color:var(--cinnabar);padding:0 18px 4px;}
-.st.s3 .st-price{color:var(--sage);}
-.st-price span{font-size:.55em;color:var(--muted);}
-.st-body{padding:6px 18px 16px;flex:1;}
-.st-body p{margin:0 0 8px;font-size:.85em;color:var(--ink-2);line-height:1.68;}
-.st-body p:last-child{margin-bottom:0;}
-.st-body b{color:var(--ink);}
-.st-foot{padding:11px 18px;background:var(--surface);font-size:.79em;color:var(--muted);line-height:1.6;}
-.st-foot b{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--jade);display:block;margin-bottom:3px;font-weight:400;}
-
 .gain{margin-top:var(--gap);background:var(--ink);color:#DFE7DF;border-radius:3px;padding:clamp(18px,2.6vw,26px);}
 .gain-t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#7E9C90;margin-bottom:13px;line-height:1.7;}
 .gain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:5px 22px;}
@@ -214,6 +192,83 @@ h1 em{font-style:normal;color:var(--cinnabar);}
 .gain-item b{color:#E8A49B;}
 .gain-foot{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16);font-size:.85em;color:#8B9C94;line-height:1.75;}
 .gain-foot b{color:#E8A49B;}
+
+/* =========================================================
+   THE ONE LINE — six gates, click to open the strategy
+   ========================================================= */
+.pathbar{display:flex;justify-content:flex-end;margin-bottom:10px;}
+.pathtoggle{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 11px;border:1px solid var(--hair-2);background:transparent;
+  color:var(--muted);border-radius:2px;cursor:pointer;
+}
+.pathtoggle:hover{border-color:var(--jade);color:var(--jade);}
+
+.path{position:relative;padding-left:32px;}
+.path::before{
+  content:"";position:absolute;left:7px;top:14px;bottom:14px;width:2px;
+  background:linear-gradient(180deg,var(--jade) 0%,var(--jade) 44%,var(--cinnabar) 44%,var(--cinnabar) 100%);
+}
+.nd{position:relative;background:var(--white);border-radius:3px;margin-bottom:9px;}
+.nd:last-child{margin-bottom:0;}
+.nd::before{
+  content:"";position:absolute;left:-32px;top:21px;width:14px;height:14px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--jade);z-index:2;
+}
+.nd.paid::before{border-color:var(--cinnabar);background:var(--cinnabar);}
+.nd.big::before{width:19px;height:19px;left:-34px;top:19px;}
+.nd.paid{border-top:2px solid var(--cinnabar);}
+.nd.big{box-shadow:0 0 0 2px var(--cinnabar);}
+
+.nd > summary{
+  list-style:none;cursor:pointer;padding:15px 18px;
+  display:flex;gap:13px;align-items:flex-start;
+}
+.nd > summary::-webkit-details-marker{display:none;}
+.nd > summary:focus-visible{outline:2px solid var(--cinnabar);outline-offset:-2px;}
+.nd-no{flex:none;width:22px;font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:5px;}
+.nd.paid .nd-no{color:var(--cinnabar);}
+.nd-main{flex:1;min-width:0;}
+.nd-t{font-family:var(--serif);font-size:clamp(17px,2vw,19px);font-weight:600;line-height:1.35;}
+.nd-p{
+  display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;
+  padding:2px 8px;border-radius:2px;margin-left:9px;vertical-align:3px;white-space:nowrap;
+  background:var(--cinnabar-lt);color:var(--cinnabar);
+}
+.nd-p.free{background:var(--jade-lt);color:var(--jade);}
+.nd-s{display:block;font-size:.85em;color:var(--muted);line-height:1.6;margin-top:3px;}
+.nd-more{
+  flex:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--hair-2);border-radius:2px;padding:3px 8px;
+  white-space:nowrap;margin-top:3px;
+}
+.nd > summary:hover .nd-more{border-color:var(--jade);color:var(--jade);}
+.nd-more::after{content:"　＋";}
+.nd[open] .nd-more::after{content:"　−";}
+.nd[open] .nd-more{border-color:var(--jade);color:var(--jade);}
+
+.nd-body{padding:0 18px 17px 53px;}
+.nd-body ul{list-style:none;margin:0;padding:0;}
+.nd-body li{font-size:.86em;color:var(--ink-2);line-height:1.68;padding:4px 0 4px 17px;position:relative;}
+.nd-body li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:var(--hair-2);}
+.nd.paid .nd-body li::before{background:var(--cinnabar);}
+.nd-body li b{color:var(--ink);}
+.nd-note{margin-top:11px;padding:12px 14px;border-radius:2px;background:var(--surface);font-size:.84em;line-height:1.7;color:var(--ink-2);}
+.nd-note.warn{background:var(--amber-lt);color:#6B5322;}
+.nd-note b{color:var(--ink);}
+.nd-note.warn b{color:#5A4419;}
+.nd-note .nt{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.nd-note.warn .nt{color:var(--amber);}
+
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap);margin-top:var(--gap);}
+.rl{background:var(--white);border-left:3px solid var(--jade);border-radius:3px;padding:15px 17px;}
+.rl.hot{border-left-color:var(--cinnabar);}
+.rl.warn{border-left-color:var(--amber);}
+.rl-t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--jade);margin-bottom:6px;}
+.rl.hot .rl-t{color:var(--cinnabar);}
+.rl.warn .rl-t{color:var(--amber);}
+.rl-b{font-size:.85em;color:var(--ink-2);line-height:1.7;}
+.rl-b b{color:var(--ink);}
 
 /* =========================================================
    WEEK STRIP
@@ -357,6 +412,14 @@ footer a:hover{text-decoration:underline;}
   .wstrip{grid-template-columns:repeat(6,1fr);gap:4px;}
   .wcell{height:34px;}
 
+  .path{padding-left:26px;}
+  .path::before{left:5px;}
+  .nd::before{left:-26px;width:12px;height:12px;top:20px;}
+  .nd.big::before{left:-28px;width:16px;height:16px;}
+  .nd > summary{padding:14px 15px;gap:10px;flex-wrap:wrap;}
+  .nd-more{order:3;margin-top:0;}
+  .nd-body{padding:0 15px 15px;}
+
   .plan-head{padding:18px;}
   .pblock,.risk,.plan-one{padding:15px 18px;}
   .mod-n{padding:15px 0 0 15px;}
@@ -366,10 +429,11 @@ footer a:hover{text-decoration:underline;}
 }
 
 @media print{
-  .nav{display:none;}
+  .nav,.pathbar{display:none;}
+  .nd-body{display:block !important;}
   body{background:#fff;font-size:10.5pt;}
   .wrap{max-width:none;padding:0;}
-  .plan,.mod,.hcard,.st,.pos,.callout,.gain,.closing,.ly,.weeks,.bars,.floop{break-inside:avoid;}
+  .plan,.mod,.hcard,.nd,.rl,.pos,.callout,.gain,.closing,.ly,.weeks,.bars,.floop{break-inside:avoid;}
   .rule{break-after:avoid;}
   .floop,.gain,.ly-foot{background:#121A18 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .fbar,.plan-head,.ly-h,.wcell,.bfill{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -388,7 +452,7 @@ footer a:hover{text-decoration:underline;}
     <div class="nav-links" id="navlinks">
       <a href="#s1">漏斗 Funnel</a>
       <a href="#s2">方案 Plans</a>
-      <a href="#s3">三步 Path</a>
+      <a href="#s3">六關 Path</a>
       <a href="#s4">時程 Timeline</a>
       <a href="#s5">時間 Hours</a>
       <a href="#s6">基礎 Basics</a>
@@ -634,58 +698,179 @@ footer a:hover{text-decoration:underline;}
 </div>
 </section>
 
-<!-- ===== 3. 三步 ===== -->
+<!-- ===== 3. 一條線 ===== -->
 <section id="s3">
 <div class="rule">
-  <div class="kicker">03 · 路徑 The Path</div>
-  <h2>選 B 之後，接下來三步</h2>
-  <div class="h2en">High Price First, Low Price Last</div>
+  <div class="kicker">03 · 路徑 The Line</div>
+  <h2>一條線走完，六關</h2>
+  <div class="h2en">Six Gates, Tap Any One for the Strategy</div>
 </div>
 <p class="rule-sub">
-  A 案不是不做，是<b>放到第三步</b>。因為高單價那一梯，會把低單價需要的東西全部生出來。
+  沒有分岔，就這六關。<b>前三關在累積名單，第四關回本，第五關賺錢，第六關變成資產。</b><br>
+  想知道哪一關要做什麼，點開那一關就好。
 </p>
 
-<div class="steps3">
-  <div class="st s1">
-    <div class="st-head">
-      <div class="st-no">第一步　Step 1</div>
-      <div class="st-name">第一梯帶班</div>
-      <div class="st-when">今年第 10 週開賣</div>
-    </div>
-    <div class="st-price">$1,297 <span>· 早鳥 $997</span></div>
-    <div class="st-body">
-      <p>限額 10 人。六週 Live ＋ 動作回饋，課逐週解鎖。</p>
-      <p><b>只要 6 個人就打平。</b>這一梯真正的任務不是賺錢，是把後面兩步的素材蒐集齊。</p>
-    </div>
-    <div class="st-foot"><b>要拿到</b>10 份前後對照影片、真實課綱、他們的原話</div>
-  </div>
+<div class="pathbar">
+  <button class="pathtoggle" id="pathtoggle" type="button">全部展開 Expand all</button>
+</div>
 
-  <div class="st s2">
-    <div class="st-head">
-      <div class="st-no">第二步　Step 2</div>
-      <div class="st-name">第二梯帶班</div>
-      <div class="st-when">明年 1 月</div>
-    </div>
-    <div class="st-price">$1,297–1,497</div>
-    <div class="st-body">
-      <p>1 月是北美按摩師換照與進修的旺季。</p>
-      <p><b>這一梯才是真正賺錢的一梯。</b>有見證、課綱定了、你也帶熟了，交付成本低很多，而且<b>可以漲價</b>。</p>
-    </div>
-    <div class="st-foot"><b>不要跳過</b>見證變 20 份，而且你會知道哪些內容可以砍</div>
-  </div>
+<div class="path" id="path">
 
-  <div class="st s3">
-    <div class="st-head">
-      <div class="st-no">第三步　Step 3</div>
-      <div class="st-name">錄播版上架</div>
-      <div class="st-when">明年 3–4 月</div>
+  <details class="nd">
+    <summary>
+      <span class="nd-no">01</span>
+      <span class="nd-main">
+        <span class="nd-t">拍片<span class="nd-p free">免費</span></span>
+        <span class="nd-s">第 1–9 週　·　一週 3–4 支，沿用原帳號</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li>三層各拍幾支，<b>看哪一層最多同行有反應</b>，之後就往那層加碼</li>
+        <li>一個月挑兩天集中拍攝，一天拍完 6 支，其他日子完全不碰</li>
+        <li>每支結尾固定同一句話，把人帶到三層檢測</li>
+        <li>同步送出北美教學資格申請，<b>審核要時間，第 10 週要用就是現在要送</b></li>
+      </ul>
+      <div class="nd-note">
+        <div class="nt">這一關真正在做的事</div>
+        決定後面五關有沒有人。名單是唯一會複利的東西，<b>影片的量比影片的完美度重要</b>。
+      </div>
     </div>
-    <div class="st-price">$497</div>
-    <div class="st-body">
-      <p>常態販售，賣好幾年。這時候才錄，內容是兩梯學員驗證過的。</p>
-      <p><b>而且價格站得住了。</b>有 $1,297 的版本在，$497 是「便宜」；沒有它，$497 是「比市場貴三倍」。</p>
+  </details>
+
+  <details class="nd">
+    <summary>
+      <span class="nd-no">02</span>
+      <span class="nd-main">
+        <span class="nd-t">三層檢測<span class="nd-p free">收 Email</span></span>
+        <span class="nd-s">第 1–9 週　·　15 題、3 分鐘，換到 email</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li>15 題，三層各 5 題，測他漏在手、排班、還是底子</li>
+        <li>結果頁自動播對應那一層的解說影片（三支，一次錄完一直用）</li>
+        <li><b>大部分人會測出兩層以上同時漏</b>，這件事本身就證明了「只補一層沒有用」</li>
+        <li>這不只是行銷工具，是你整套觀點最好的說明書</li>
+      </ul>
+      <div class="nd-note warn">
+        <div class="nt">整條線唯一的硬門檻</div>
+        <b>第 8 週結束時名單要到 90–100。</b>沒到就換主題重測，不要拖到第 10 週才發現。
+      </div>
     </div>
-    <div class="st-foot"><b>接旺季餘熱</b>3–4 月上架，剛好接 1 月換照季的長尾</div>
+  </details>
+
+  <details class="nd">
+    <summary>
+      <span class="nd-no">03</span>
+      <span class="nd-main">
+        <span class="nd-t">免費工作坊<span class="nd-p free">免費 45 分</span></span>
+        <span class="nd-s">第 10 週　·　真的教東西，最後開賣</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li>示範<b>錯誤發力 vs 結構發力</b>，再加一個經絡觀點</li>
+        <li>最後才開賣，限時 72 小時，到期優惠碼自動失效</li>
+        <li>沒買的人自動收到提醒信</li>
+      </ul>
+      <div class="nd-note">
+        <div class="nt">為什麼要真的教</div>
+        他學到東西，才會相信付費版更有價值。<b>純推銷的工作坊只會讓名單消耗掉。</b>
+      </div>
+    </div>
+  </details>
+
+  <details class="nd paid big">
+    <summary>
+      <span class="nd-no">04</span>
+      <span class="nd-main">
+        <span class="nd-t">第一梯帶班<span class="nd-p">$1,297</span></span>
+        <span class="nd-s">第 10–16 週　·　限額 10 人，六週 Live ＋ 動作回饋　·　早鳥 $997</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li><b>6 個人就打平顧問費</b>，滿額 10 人是 $12,970</li>
+        <li>課逐週解鎖、賣完再錄，內容根據這 10 個人的真實問題，不是憑空猜</li>
+        <li>每週一次 90 分鐘 Live，加上看 10 個人的動作影片</li>
+        <li>六週結束就結束，<b>不是長期服務</b></li>
+      </ul>
+      <div class="nd-note">
+        <div class="nt">這一梯真正的任務</div>
+        不是賺錢，是<b>把第 5、6 關需要的素材蒐集齊</b>：見證、真實課綱、反對意見清單、Live 錄影。
+      </div>
+      <div class="nd-note warn">
+        <div class="nt">開賣前兩件事要先準備</div>
+        <b>① 錄影與使用授權寫進報名條款，不要事後才問。</b>事後問，十個大概只有三個答應，而且未必是成果最好的三個。購買頁寫明「課程過程會錄影，可能用於未來的教學內容」，個人影像要用時再另行取得書面同意。<br><br>
+        <b>② 見證在梯次進行中蒐集，不是結束後。</b>把第 2 週和第 6 週的自我側錄<b>當成作業</b>，因為是作業不是拜託，回收率會很高。而你拿到的不是文字感想，是同一個動作的前後對照影片，說服力是文字的十倍。
+      </div>
+    </div>
+  </details>
+
+  <details class="nd paid">
+    <summary>
+      <span class="nd-no">05</span>
+      <span class="nd-main">
+        <span class="nd-t">第二梯帶班<span class="nd-p">$1,297–1,497</span></span>
+        <span class="nd-s">明年 1 月　·　換照旺季，有見證可以漲價</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li>1 月是北美按摩師換照與進修的旺季，<b>需求集中在年初</b></li>
+        <li>有見證了、課綱定了、你也帶熟了，交付成本比第一梯低很多</li>
+        <li>所以<b>可以漲價</b>，這一梯才是真正賺錢的一梯</li>
+      </ul>
+      <div class="nd-note">
+        <div class="nt">為什麼不要跳過</div>
+        兩梯的見證是 20 份不是 10 份，而且你會知道<b>哪些內容真的重要、哪些可以砍</b>，第六關才錄得準。
+      </div>
+    </div>
+  </details>
+
+  <details class="nd paid">
+    <summary>
+      <span class="nd-no">06</span>
+      <span class="nd-main">
+        <span class="nd-t">錄播版上架<span class="nd-p">$497</span></span>
+        <span class="nd-s">明年 3–4 月　·　常態販售，變成資產</span>
+      </span>
+      <span class="nd-more">策略</span>
+    </summary>
+    <div class="nd-body">
+      <ul>
+        <li>常態販售，賣好幾年。這時候才錄，內容是兩梯學員驗證過的</li>
+        <li>3–4 月上架，剛好接 1 月換照季之後的長尾</li>
+        <li><b>價格站得住了</b>：有 $1,297 的版本在，$497 是「便宜」；沒有它，$497 是「比市場貴三倍」</li>
+      </ul>
+      <div class="nd-note warn">
+        <div class="nt">不能只把 Live 錄影剪一剪</div>
+        第一梯賣的是「有你在」，錄播版沒有你。直接拿實況上架，買的人會拿到一堆冗長影片，<b>完課率崩掉，而完課率崩掉就拿不到學分證書，CE 賣點直接失效</b>。<br><br>
+        正確做法是<b>重錄主課、剪用 Q&amp;A</b>：主教學重錄一次，每單元 30–40 分鐘、乾淨有結構；常見問題從 Live 錄影剪。重錄成本不高，因為那時候你已經很清楚要講什麼了。
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<div class="rail">
+  <div class="rl hot">
+    <div class="rl-t">回本點</div>
+    <div class="rl-b">在<b>第 10 週開賣那晚</b>，不是第 12 週。第一梯收滿 6 人就打平顧問費，滿額 10 人是 <b>$12,970</b>。</div>
+  </div>
+  <div class="rl warn">
+    <div class="rl-t">唯一的檢查點</div>
+    <div class="rl-b"><b>第 8 週名單要到 90–100。</b>沒到就換主題重測，不要拖到第 10 週才發現。這是整條線唯一的硬門檻。</div>
+  </div>
+  <div class="rl">
+    <div class="rl-t">排程已算進去</div>
+    <div class="rl-b"><b>11–12 月保險旺季</b>診間會滿檔，那兩個月專心看診，內容降量、不開賣。第一梯在那之前就跑完了。</div>
   </div>
 </div>
 
@@ -700,21 +885,9 @@ footer a:hover{text-decoration:underline;}
     <div class="gain-item"><b>價格錨</b>　讓 $497 變成便宜，而不是貴</div>
   </div>
   <div class="gain-foot">
-    順序反過來先賣 $497：<b>賣得動</b>，等於把最好的內容出清了，之後開 $1,297 帶班，前面那批人會覺得早買虧了；<b>賣不動</b>，沒見證、沒素材、沒課綱，還是得從頭做一次帶班。<br>
+    第 04 關的 10 個人，是在幫你把第 06 關那堂課寫出來。他們卡在哪、問了什麼、什麼講法聽得懂，全部會變成錄播版的骨架。<br>
     <b>先低後高，成功也尷尬、失敗也重來。先高後低，成功是複利、失敗只損失一梯。</b>
   </div>
-</div>
-
-<div class="callout">
-  <div class="ct2">錄播版不能只把 Live 錄影剪一剪</div>
-  第一梯賣的是「有你在」，錄播版沒有你。直接拿實況上架，買的人會拿到一堆冗長影片，<b>完課率崩掉，而完課率崩掉就拿不到學分證書，CE 賣點直接失效</b>。<br><br>
-  正確做法是<b>重錄主課、剪用 Q&amp;A</b>：主教學重錄一次，每單元 30–40 分鐘、乾淨有結構；常見問題從 Live 錄影剪。重錄成本不高，因為那時候你已經很清楚要講什麼了。
-</div>
-
-<div class="callout">
-  <div class="ct2">第一梯開賣前，兩件事要先準備</div>
-  <b>① 錄影與使用授權寫進報名條款，不要事後才問。</b>事後問，十個大概只有三個答應，而且未必是成果最好的三個。購買頁寫明「課程過程會錄影，可能用於未來的教學內容」，個人影像要用時再另行取得書面同意。<br><br>
-  <b>② 見證在梯次進行中蒐集，不是結束後。</b>把第 2 週和第 6 週的自我側錄<b>當成作業</b>，因為是作業不是拜託，回收率會很高。而你拿到的不是文字感想，是同一個動作的前後對照影片，說服力是文字的十倍。
 </div>
 </section>
 
@@ -989,6 +1162,36 @@ footer a:hover{text-decoration:underline;}
 (function(){
   var pb = document.getElementById('printbtn');
   if(pb){ pb.addEventListener('click', function(){ window.print(); }); }
+
+  /* six-gate path: expand / collapse all */
+  var path = document.getElementById('path');
+  var tg   = document.getElementById('pathtoggle');
+  if(path && tg){
+    var all = Array.prototype.slice.call(path.querySelectorAll('details.nd'));
+    function sync(){
+      var openCount = all.filter(function(d){ return d.open; }).length;
+      tg.textContent = openCount === all.length ? '全部收合 Collapse all' : '全部展開 Expand all';
+    }
+    tg.addEventListener('click', function(){
+      var openAll = all.some(function(d){ return !d.open; });
+      all.forEach(function(d){ d.open = openAll; });
+      sync();
+    });
+    all.forEach(function(d){ d.addEventListener('toggle', sync); });
+    sync();
+  }
+
+  /* make sure a printed PDF contains every strategy panel */
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('details.nd').forEach(function(d){
+      if(!d.open){ d.dataset.wasClosed = '1'; d.open = true; }
+    });
+  });
+  window.addEventListener('afterprint', function(){
+    document.querySelectorAll('details.nd[data-was-closed]').forEach(function(d){
+      d.open = false; delete d.dataset.wasClosed;
+    });
+  });
 
   var links = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
   var map = {}, targets = [];
