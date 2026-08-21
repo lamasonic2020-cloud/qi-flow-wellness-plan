@@ -193,6 +193,16 @@ h1 em{font-style:normal;color:var(--cinnabar);}
 .gain-foot{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16);font-size:.85em;color:#8B9C94;line-height:1.75;}
 .gain-foot b{color:#E8A49B;}
 
+/* three-tier price on plan B */
+.plan-price .pp-early{display:block;line-height:1;}
+.plan-price .pp-early small{font-size:.34em;opacity:.88;font-family:var(--sans);letter-spacing:0;margin-left:7px;}
+.plan-price .pp-full{display:block;font-size:.55em;opacity:.82;margin-top:8px;letter-spacing:.02em;}
+.plan-price .pp-full small{font-size:.7em;opacity:.8;font-family:var(--sans);margin-left:5px;}
+.plan-note{margin-top:11px;font-size:.78em;line-height:1.6;opacity:.82;}
+
+/* neutral "bonus" badge */
+.badge.soft{border-color:var(--hair-2);color:var(--muted);}
+
 /* funnel: disabled lane + why-note */
 .flane.soon{opacity:.45;filter:grayscale(1);}
 .fwhy{
@@ -303,7 +313,7 @@ h1 em{font-style:normal;color:var(--cinnabar);}
    WEEK STRIP
    ========================================================= */
 .weeks{background:var(--white);border-radius:3px;padding:clamp(18px,2.6vw,26px);}
-.wstrip{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-bottom:6px;}
+.wstrip{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;}
 .wcell{height:38px;border-radius:2px;display:grid;place-items:center;font-family:var(--mono);font-size:10px;color:#fff;position:relative;}
 .wcell.p1{background:#5E8478;}
 .wcell.p3{background:#3F6D60;}
@@ -439,7 +449,7 @@ footer a:hover{text-decoration:underline;}
   .fcap{text-align:left;margin-left:0;margin-right:0;}
   .floop{padding:17px 16px;}
 
-  .wstrip{grid-template-columns:repeat(6,1fr);gap:4px;}
+  .wstrip{grid-template-columns:repeat(4,1fr);gap:4px;}
   .wcell{height:34px;}
 
   .path{padding-left:26px;}
@@ -503,10 +513,10 @@ footer a:hover{text-decoration:underline;}
 
   <div class="glance">
     <div class="g"><div class="gn">5</div><div class="gl">步驟，會循環<span class="en">Steps, Looping</span></div></div>
-    <div class="g ga"><div class="gn">$497</div><div class="gl">A 案　純錄播<span class="en">Plan A</span></div></div>
-    <div class="g gb"><div class="gn">$1,297</div><div class="gl">B 案　帶班<span class="en">Plan B</span></div></div>
-    <div class="g gb"><div class="gn">6<small>人</small></div><div class="gl">B 案打平門檻<span class="en">Break-Even</span></div></div>
-    <div class="g"><div class="gn">第 10 週</div><div class="gl">開賣日<span class="en">Launch</span></div></div>
+    <div class="g ga"><div class="gn">$297</div><div class="gl">A 案　純錄播<span class="en">Plan A</span></div></div>
+    <div class="g gb"><div class="gn">$999</div><div class="gl">B 案　帶班<span class="en">Plan B</span></div></div>
+    <div class="g gb"><div class="gn">8<small>人</small></div><div class="gl">B 案打平門檻<span class="en">Break-Even</span></div></div>
+    <div class="g"><div class="gn">明年 1 月</div><div class="gl">開賣日<span class="en">Launch</span></div></div>
   </div>
 </header>
 
@@ -555,10 +565,10 @@ footer a:hover{text-decoration:underline;}
       <div class="flane low soon">
         <div class="flane-h">
           <div class="flane-tag">左　第二年才開 Not Yet</div>
-          <div class="flane-n">$497 錄播課</div>
+          <div class="flane-n">$297 錄播課</div>
         </div>
         <div class="flane-b"><ol>
-          <li>明年 3–4 月才存在（見第 06 關）</li>
+          <li>明年 5–6 月才存在（見第 06 關）</li>
           <li>現在開這扇門會直接吃掉高單價</li>
           <li><b>等錄播版上線，這裡才打開</b></li>
         </ol></div>
@@ -573,13 +583,13 @@ footer a:hover{text-decoration:underline;}
           <li>30 分鐘聊狀況，不是推銷</li>
           <li><b>當場成交，收訂金</b></li>
         </ol></div>
-        <div class="flane-p">$1,297 起　帶班／一對一</div>
+        <div class="flane-p">$999 起　帶班／一對一</div>
       </div>
     </div>
 
     <div class="fwhy">
       <div class="ct2">為什麼第一年只開一個門</div>
-      $497 一旦先出現，$1,297 的價格錨就沒了，人會直接買便宜的，帶班收不滿 10 人。等第 05、06 關跑完，$497 才會變成「原價 $1,297 的內容」，<b>那時候它是便宜，不是貴</b>。
+      $297 一旦先出現，$999 的價格錨就沒了，人會直接買便宜的，帶班收不滿。等第 05、06 關跑完，$297 才會變成「原價 $999 的內容」，<b>那時候它是便宜，不是貴</b>。
     </div>
 
     <div class="farrow">↓</div>
@@ -632,7 +642,7 @@ footer a:hover{text-decoration:underline;}
       <div class="plan-tag">方案 A</div>
       <div class="plan-name">純線上課程</div>
       <div class="plan-nameen">Self-Paced Course</div>
-      <div class="plan-price">$497<small>USD · 早鳥 $397</small></div>
+      <div class="plan-price">$297<small>USD · 早鳥 $247</small></div>
     </div>
     <div class="plan-one">錄好放著賣，<b>不需要你出現</b>。買了就能看。</div>
     <div class="pblock">
@@ -653,9 +663,9 @@ footer a:hover{text-decoration:underline;}
     </div>
     <div class="risk">
       <b class="rt">要注意</b>
-      北美同類錄播課落在 $20–200，而且有四個教了十幾年的品牌：<b>Save Your Hands!</b>（傷害預防，全美與加拿大數百間按摩學校採用當教材）、<b>imassage / Eric Stephenson</b>（No Thumbs 深層按摩，$299 換 14 個學分，教了 20 年以上）、<b>LearnMuscles / Joe Muscolino</b>（教了 35 年以上）、<b>MTMB Institute</b>（8 CEU 自學課，主打便宜）。<br><br>
-      更麻煩的是學分：<b>Stephenson 的課在 ABMP 會員平台是免費送的，Muscolino 的平台有 320 小時以上免費 NCBTMB 學分。</b>「有 8 個進修學分」撐不起價格，你沒辦法跟免費比價。<br><br>
-      所以 $497 純錄播真正能撐住的只剩「東西方整合」一項，而且要賣 16 個人。
+      北美同類錄播課落在 $20–200，而且有四個教了十幾年的品牌：<b>Save Your Hands!</b>（全美與加拿大數百間按摩學校採用當教材）、<b>imassage / Eric Stephenson</b>（No Thumbs 深層按摩，$299 換 14 個學分）、<b>LearnMuscles / Joe Muscolino</b>（教了 35 年以上）、<b>MTMB Institute</b>（8 CEU 自學課）。<br><br>
+      而且學分不是賣點：<b>Stephenson 的課在 ABMP 會員平台免費送，Muscolino 的平台有 320 小時以上免費 NCBTMB 學分。</b>你沒辦法跟免費比價。<br><br>
+      $297 雖然落在合理區間，但問題是<b>要賣 26 個人才打平顧問費</b>，第一次開賣就要打出資深創作者的成績，而且你手上還沒有任何學員見證。
     </div>
   </div>
 
@@ -664,9 +674,13 @@ footer a:hover{text-decoration:underline;}
       <div class="plan-tag">方案 B　·　我的建議 RECOMMENDED</div>
       <div class="plan-name">第一梯次帶班</div>
       <div class="plan-nameen">First Live Cohort</div>
-      <div class="plan-price">$1,297<small>USD · 早鳥 $997</small></div>
+      <div class="plan-price">
+        <span class="pp-early">早鳥 $799<small>· 開賣後 72 小時</small></span>
+        <span class="pp-full">正價 $999<small>USD</small></span>
+      </div>
+      <div class="plan-note">72 小時後自動跳回 $999，優惠碼到期即失效。</div>
     </div>
-    <div class="plan-one">同樣的內容，加上六週 Live 和動作回饋。<b>限額 10 人。</b></div>
+    <div class="plan-one">同樣的內容，加上六週 Live 和動作回饋。<b>目標 12–15 人。</b></div>
     <div class="pblock">
       <div class="pb-t">學員買到　What they get</div>
       <ul>
@@ -684,9 +698,16 @@ footer a:hover{text-decoration:underline;}
         <li>每週看 10 個人的動作影片</li>
       </ul>
     </div>
+    <div class="pblock">
+      <div class="pb-t">$999 對他們來說是多少　What $999 buys</div>
+      <div style="font-size:.86em;color:var(--ink-2);line-height:1.72">
+        一個北美 RMT 一節收 $110–140。<b style="color:var(--ink)">$999 大約是八九節治療的收入。</b>而這門課要解決的是「你還能不能做二十年」這件事。<br><br>
+        八九節換二十年，這個帳算得過去，<b style="color:var(--ink)">你自己就是那個差點做不下去的人，你最知道值不值得。</b>
+      </div>
+    </div>
     <div class="risk">
       <b class="rt">要注意</b>
-      你必須願意每週開一次 Zoom，用英文帶 10 個北美同行。如果不想做就選 A。但如果做得來，<b>這就是你每天在診間做的事，只是換成螢幕。</b>
+      你必須願意每週開一次 Zoom，用英文帶 12–15 個北美同行。如果不想做就選 A。但如果做得來，<b>這就是你每天在診間做的事，只是換成螢幕。</b>
     </div>
   </div>
 </div>
@@ -701,36 +722,36 @@ footer a:hover{text-decoration:underline;}
   <div class="bgrp">
     <div class="bgrp-t">要幾個人才打平顧問費</div>
     <div class="bgrp-en">Students needed to break even</div>
-    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">16 人</div></div></div>
-    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:37.5%">6 人</div></div><span class="bwin">少 62%</span></div>
+    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">26 人</div></div></div>
+    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:31%">8 人</div></div><span class="bwin">少 69%</span></div>
   </div>
 
   <div class="bgrp">
     <div class="bgrp-t">需要累積多少名單</div>
     <div class="bgrp-en">Leads needed</div>
-    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">約 270</div></div></div>
-    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:55.5%">約 150</div></div><span class="bwin">少 44%</span></div>
+    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">約 430</div></div></div>
+    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:53%">約 230</div></div><span class="bwin">少 47%</span></div>
   </div>
 
   <div class="bgrp">
     <div class="bgrp-t">建置期每週要投入幾小時</div>
     <div class="bgrp-en">Hours per week during build</div>
-    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">10–12 小時</div></div></div>
-    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:59%">6–7 小時</div></div><span class="bwin">少 41%</span></div>
+    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:100%">8–10 小時</div></div></div>
+    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:44%">約 4 小時</div></div><span class="bwin">少 56%</span></div>
   </div>
 
   <div class="bgrp">
-    <div class="bgrp-t">三個月內回本的機率（這項越長越好）</div>
+    <div class="bgrp-t">開賣後三個月內回本的機率（這項越長越好）</div>
     <div class="bgrp-en">Odds of breaking even within 3 months</div>
-    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:40%">25%</div></div></div>
-    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:100%">60–65%</div></div><span class="bwin">約 2.5 倍</span></div>
+    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:21%">15%</div></div></div>
+    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:100%">70–75%</div></div><span class="bwin">約 4.5 倍</span></div>
   </div>
 </div>
 
 <div class="callout">
   <div class="ct2">為什麼建議 B 案</div>
-  <b>不是因為比較賺，是因為失敗成本低很多。</b>A 案要你先花 3–4 個拍攝日把課錄完，然後祈禱有 16 個人買；只賣出 6 個，課已經錄了、時間已經花了。<br><br>
-  B 案是<b>先收錢再錄課</b>。開賣那天只需要 6 個人，收到錢才開始錄，而且錄的內容是根據 10 個真實學員的問題，不是憑空猜的。
+  <b>不是因為比較賺，是因為失敗成本低很多。</b>A 案要你先花 3–4 個拍攝日把課錄完，然後祈禱有 26 個人買；只賣出 8 個，課已經錄了、時間已經花了。<br><br>
+  B 案是<b>先收錢再錄課</b>。開賣那天只需要 8 個人，收到錢才開始錄，而且錄的內容是根據 12–15 個真實學員的問題，不是憑空猜的。
 </div>
 
 <div class="callout">
@@ -739,7 +760,7 @@ footer a:hover{text-decoration:underline;}
   他們全部是錄播或實體工作坊，Stephenson 的工作坊甚至標明 100% hands-on，<b>他自己知道這件事必須動手，所以他不做線上帶班。</b><br><br>
   而身體力學本來就學不會靠單向影片，這件事按摩師自己最清楚。
   <ol class="sell">
-    <li class="top"><b>有人看你做</b><span class="why">這是 $1,297 唯一真正的支撐</span></li>
+    <li class="top"><b>有人看你做</b><span class="why">這是 $999 唯一真正的支撐</span></li>
     <li><b>針灸執照與遠端取穴</b><span class="why">四家都沒有，所以沒有比價基準</span></li>
     <li><b>你自己垮過的三層</b><span class="why">別人教怎麼保護手，你能教排班和底子</span></li>
     <li>學分<span class="why">規格欄，不是標題</span></li>
@@ -770,24 +791,25 @@ footer a:hover{text-decoration:underline;}
       <span class="nd-no">01</span>
       <span class="nd-main">
         <span class="nd-t">拍片<span class="nd-p free">免費</span></span>
-        <span class="nd-s">第 1–9 週　·　一週 3–4 支，沿用原帳號</span>
+        <span class="nd-s">8 月下旬 – 12 月　·　一週 1–2 支，新開專業帳號</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
     <div class="nd-body">
       <ul>
-        <li>三層各拍幾支，<b>看哪一層最多同行有反應</b>，之後就往那層加碼</li>
-        <li>一個月挑兩天集中拍攝，一天拍完 6 支，其他日子完全不碰</li>
-        <li>每支結尾固定同一句話，把人帶到三層檢測</li>
-        <li>同步送出北美教學資格申請，<b>審核要時間，第 10 週要用就是現在要送</b></li>
+        <li><b>新開一個專門對北美同業的 IG 帳號</b>，與現有診所帳號分開，用協作功能互推</li>
+        <li>一週 1–2 支 Reels，加上<b>文字輪播貼文（carousel）</b>補量。輪播貼文不用拍，AI 可以生成，忙的時候也發得出來</li>
+        <li>每週固定挪約 4 小時做完一週的量，其他日子完全不碰</li>
+        <li>文案由顧問方提供，照稿拍。初期不用自己想內容</li>
+        <li>同步送出北美教學資格申請</li>
       </ul>
       <div class="nd-note">
-        <div class="nt">為什麼要送這個</div>
+        <div class="nt">為什麼要送北美教學資格申請</div>
         不是為了把「有學分」當賣點，市面上學分是免費的。真正的價值是兩件事：<b>Approved Provider 會被列進 NCBTMB 課程目錄</b>，每年有數千名按摩師在那裡找課，這是不用拍片的被動流量；以及在你還沒有品牌聲量的時候，<b>這個標籤是第三方替你背書</b>。
       </div>
       <div class="nd-note">
         <div class="nt">這一關真正在做的事</div>
-        決定後面五關有沒有人。名單是唯一會複利的東西，<b>影片的量比影片的完美度重要</b>。
+        決定後面五關有沒有人。名單是唯一會複利的東西。<b>20 週 × 每週 2 支 ≈ 40 支影片</b>，總量比原本的密集版還多，但每週壓力只有一半。
       </div>
     </div>
   </details>
@@ -797,7 +819,7 @@ footer a:hover{text-decoration:underline;}
       <span class="nd-no">02</span>
       <span class="nd-main">
         <span class="nd-t">三層檢測<span class="nd-p free">收 Email</span></span>
-        <span class="nd-s">第 1–9 週　·　15 題、3 分鐘，換到 email</span>
+        <span class="nd-s">10 月 – 12 月　·　15 題、3 分鐘，換到 email</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
@@ -807,10 +829,11 @@ footer a:hover{text-decoration:underline;}
         <li>結果頁自動播對應那一層的解說影片（三支，一次錄完一直用）</li>
         <li><b>大部分人會測出兩層以上同時漏</b>，這件事本身就證明了「只補一層沒有用」</li>
         <li>這不只是行銷工具，是你整套觀點最好的說明書</li>
+        <li>每週一封 email，信末附 <b>Google 表單問卷</b>，測他們對哪個主題最有興趣，據此定 offer</li>
       </ul>
       <div class="nd-note warn">
         <div class="nt">整條線唯一的硬門檻</div>
-        <b>第 8 週結束時名單要到 90–100。</b>沒到就換主題重測，不要拖到第 10 週才發現。
+        <b>12 月底名單要到 200–250。</b>沒到就換主題重測，不要拖到 1 月才發現。
       </div>
     </div>
   </details>
@@ -820,7 +843,7 @@ footer a:hover{text-decoration:underline;}
       <span class="nd-no">03</span>
       <span class="nd-main">
         <span class="nd-t">免費工作坊<span class="nd-p free">免費 45 分</span></span>
-        <span class="nd-s">第 10 週　·　真的教東西，最後開賣</span>
+        <span class="nd-s">明年 1 月　·　真的教東西，最後開賣</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
@@ -841,21 +864,29 @@ footer a:hover{text-decoration:underline;}
     <summary>
       <span class="nd-no">04</span>
       <span class="nd-main">
-        <span class="nd-t">第一梯帶班<span class="nd-p">$1,297</span></span>
-        <span class="nd-s">第 10–16 週　·　限額 10 人，六週 Live ＋ 動作回饋　·　早鳥 $997</span>
+        <span class="nd-t">第一梯帶班<span class="nd-p">早鳥 $799 / 正價 $999</span></span>
+        <span class="nd-s">1 月中 – 2 月底　·　目標 12–15 人，六週 Live ＋ 動作回饋</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
     <div class="nd-body">
       <ul>
-        <li><b>6 個人就打平顧問費</b>，滿額 10 人是 $12,970</li>
-        <li>課逐週解鎖、賣完再錄，內容根據這 10 個人的真實問題，不是憑空猜</li>
-        <li>每週一次 90 分鐘 Live，加上看 10 個人的動作影片</li>
+        <li><b>8 個人就打平顧問費</b>，收滿 15 人是 $14,985</li>
+        <li><b>早鳥 $799 只開 72 小時，之後跳回 $999。</b>早鳥賣掉 8 個就回本，而 72 小時後跳價本身就是最有效的急迫感，比任何文案都有用</li>
+        <li><b>不封死 10 人</b>：Live 90 分鐘帶 15 人也帶得動，動作回饋改成每週挑 3–4 支公開講解，不做一對一</li>
+        <li>課先錄 60 分的版本就開賣，依學員回饋補到 90、100 分。<b>買過的人會持續看到更新，這本身就是加分</b></li>
+        <li>每週一次 90 分鐘 Live。Nana 週一、週日休假，排這兩天</li>
         <li>六週結束就結束，<b>不是長期服務</b></li>
       </ul>
       <div class="nd-note">
         <div class="nt">這一梯真正的任務</div>
         不是賺錢，是<b>把第 5、6 關需要的素材蒐集齊</b>：見證、真實課綱、反對意見清單、Live 錄影。
+      </div>
+      <div class="nd-note warn">
+        <div class="nt">$999 是真正的高單價，三件事不能鬆</div>
+        <b>① 每週 Live 一定要開。</b>不能改成「錄好給你看」，那就變成 $297 的東西了。<br><br>
+        <b>② 動作回饋一定要有。</b>就算是每週挑 3–4 支公開講解，也要讓每個人在六週內至少被點到一次。<br><br>
+        <b>③ 課程要真的補到 100 分。</b>先 launch 60 分版本、依回饋補完是對的做法，但 $999 的買家會期待最後拿到完整的東西。補到 80 分就停下來，退款和差評會跟著來。
       </div>
       <div class="nd-note warn">
         <div class="nt">開賣前兩件事要先準備</div>
@@ -869,8 +900,8 @@ footer a:hover{text-decoration:underline;}
     <summary>
       <span class="nd-no">05</span>
       <span class="nd-main">
-        <span class="nd-t">第二梯帶班<span class="nd-p">$1,297–1,497</span></span>
-        <span class="nd-s">明年 1 月　·　換照旺季，有見證可以漲價</span>
+        <span class="nd-t">第二梯帶班<span class="nd-p">$999–1,197</span></span>
+        <span class="nd-s">明年 5 月起　·　有見證可以漲價</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
@@ -891,16 +922,16 @@ footer a:hover{text-decoration:underline;}
     <summary>
       <span class="nd-no">06</span>
       <span class="nd-main">
-        <span class="nd-t">錄播版上架<span class="nd-p">$497</span></span>
-        <span class="nd-s">明年 3–4 月　·　常態販售，變成資產</span>
+        <span class="nd-t">錄播版上架<span class="nd-p">$297</span></span>
+        <span class="nd-s">明年 5–6 月　·　常態販售，變成資產</span>
       </span>
       <span class="nd-more">策略</span>
     </summary>
     <div class="nd-body">
       <ul>
         <li>常態販售，賣好幾年。這時候才錄，內容是兩梯學員驗證過的</li>
-        <li>3–4 月上架，剛好接 1 月換照季之後的長尾</li>
-        <li><b>價格站得住了</b>：有 $1,297 的版本在，$497 是「便宜」；沒有它，$497 是「比市場貴三倍」</li>
+        <li><b>3–4 月 Nana 回台灣那個月，剛好可以做剪輯和整理</b>，那些工作不需要在診間，有網路就能做</li>
+        <li><b>價格站得住了</b>：有 $999 的帶班版在，$297 是「便宜」。而且 $297 落在北美同類錄播課 $20–200 的合理上緣，不是三倍價</li>
       </ul>
       <div class="nd-note warn">
         <div class="nt">不能只把 Live 錄影剪一剪</div>
@@ -915,30 +946,30 @@ footer a:hover{text-decoration:underline;}
 <div class="rail">
   <div class="rl hot">
     <div class="rl-t">回本點</div>
-    <div class="rl-b">在<b>第 10 週開賣那晚</b>，不是第 12 週。第一梯收滿 6 人就打平顧問費，滿額 10 人是 <b>$12,970</b>。</div>
+    <div class="rl-b">在<b>明年 1 月開賣那週</b>。第一梯早鳥賣掉 8 人就打平顧問費，收滿 15 人是 <b>$14,985</b>。</div>
   </div>
   <div class="rl warn">
     <div class="rl-t">唯一的檢查點</div>
-    <div class="rl-b"><b>第 8 週名單要到 90–100。</b>沒到就換主題重測，不要拖到第 10 週才發現。這是整條線唯一的硬門檻。</div>
+    <div class="rl-b"><b>12 月底名單要到 200–250。</b>沒到就換主題重測，不要拖到 1 月才發現。這是整條線唯一的硬門檻。</div>
   </div>
   <div class="rl">
     <div class="rl-t">排程已算進去</div>
-    <div class="rl-b"><b>11–12 月保險旺季</b>診間會滿檔，那兩個月專心看診，內容降量、不開賣。第一梯在那之前就跑完了。</div>
+    <div class="rl-b"><b>9 月西雅圖兩週</b>出發前囤片；<b>11–12 月保險旺季</b>專心看診、內容降量、不開賣；<b>明年 3–4 月回台灣一個月</b>，那段時間只做剪輯與整理，有網路就能做。</div>
   </div>
 </div>
 
 <div class="gain">
   <div class="gain-t">第一梯會生出來的東西，也是錄播版最缺的</div>
   <div class="gain-grid">
-    <div class="gain-item"><b>見證</b>　10 份真人前後對照，含影片</div>
+    <div class="gain-item"><b>見證</b>　12–15 份真人前後對照，含影片</div>
     <div class="gain-item"><b>課綱</b>　他們真正卡在哪，不是憑空猜</div>
     <div class="gain-item"><b>銷售頁文案</b>　他們自己講出來的原話</div>
     <div class="gain-item"><b>拍攝素材</b>　六週 Live 錄影</div>
     <div class="gain-item"><b>反對意見清單</b>　他們問過什麼、猶豫什麼</div>
-    <div class="gain-item"><b>價格錨</b>　讓 $497 變成便宜，而不是貴</div>
+    <div class="gain-item"><b>價格錨</b>　讓 $297 變成便宜，而不是貴</div>
   </div>
   <div class="gain-foot">
-    第 04 關的 10 個人，是在幫你把第 06 關那堂課寫出來。他們卡在哪、問了什麼、什麼講法聽得懂，全部會變成錄播版的骨架。<br>
+    第 04 關的 12 到 15 個人，是在幫你把第 06 關那堂課寫出來。他們卡在哪、問了什麼、什麼講法聽得懂，全部會變成錄播版的骨架。<br>
     <b>先低後高，成功也尷尬、失敗也重來。先高後低，成功是複利、失敗只損失一梯。</b>
   </div>
 </div>
@@ -948,67 +979,83 @@ footer a:hover{text-decoration:underline;}
 <section id="s4">
 <div class="rule">
   <div class="kicker">04 · 時程 Timeline</div>
-  <h2>十二週怎麼走</h2>
-  <div class="h2en">The Twelve Weeks</div>
+  <h2>六個月怎麼走</h2>
+  <div class="h2en">The Six Months</div>
 </div>
 <p class="rule-sub">
-  前九週兩案完全一樣。<b>差別從第 10 週開賣那天才開始。</b>
+  前五個月在累積名單，<b>1 月才開賣</b>。11–12 月保險旺季診間會滿檔，那段時間內容降量、專心看診。
 </p>
 
 <div class="weeks">
   <div class="wstrip">
-    <div class="wcell p1">1</div>
-    <div class="wcell p1">2</div>
-    <div class="wcell p1">3</div>
-    <div class="wcell p1">4</div>
-    <div class="wcell p3">5</div>
-    <div class="wcell p3">6</div>
-    <div class="wcell p3">7</div>
-    <div class="wcell p3">8</div>
-    <div class="wcell p3">9</div>
-    <div class="wcell p4">10</div>
-    <div class="wcell p5">11</div>
-    <div class="wcell p5">12</div>
+    <div class="wcell p1">8 月</div>
+    <div class="wcell p1">9 月</div>
+    <div class="wcell p1">10 月</div>
+    <div class="wcell p2">11 月</div>
+    <div class="wcell p2">12 月</div>
+    <div class="wcell p4">1 月</div>
+    <div class="wcell p5">2 月</div>
   </div>
   <div class="wlegend">
-    <span><i style="background:#5E8478"></i>拍片、收名單</span>
-    <span><i style="background:#3F6D60"></i>加速收名單、預熱</span>
+    <span><i style="background:#5E8478"></i>建置與養名單</span>
+    <span><i style="background:#B9C6B8"></i>旺季維持</span>
     <span><i style="background:#A8352B"></i>開賣</span>
-    <span><i style="background:#7E6046"></i>補追賣、交付</span>
+    <span><i style="background:#7E6046"></i>交付</span>
   </div>
 
   <div class="wmark">
     <div class="wm hot">
-      <span class="wt">第 1–4 週</span>
-      <b>帳號改版，每週 3–4 支影片</b>
-      三層各拍幾支，看哪一層最多同行有反應。同時送出北美教學資格申請，審核要時間。
+      <span class="wt">8 月下旬</span>
+      <b>新開專業 IG 帳號，開始拍片</b>
+      新開一個專門對北美同業的帳號（與現有診所帳號分開，用協作功能互推）。一週 1–2 支 Reels ＋ 文字輪播貼文。文案由顧問方提供，照稿拍。同步送出北美教學資格申請。
     </div>
     <div class="wm">
-      <span class="wt">第 5–8 週</span>
-      <b>加速收名單</b>
-      Story 做市調，確認哪個主題反應最大。<span style="color:var(--cinnabar)">第 8 週結束時名單要到 90–100</span>，沒到就換主題重測，不要拖到第 10 週才發現。
+      <span class="wt">9 月　西雅圖兩週</span>
+      <b>出發前囤片</b>
+      人不在內容照發，名單持續累積。
     </div>
     <div class="wm">
-      <span class="wt">第 9 週</span>
-      <b>預熱，倒數一週</b>
-      公布工作坊時間、開放報名。這一週只有一件事：把人推進工作坊。
+      <span class="wt">10 月</span>
+      <b>上線三層檢測，開始收 email</b>
+      檢測換 email，之後每週一封信。信末附 Google 表單問卷，測他們對哪個主題最有興趣。
+    </div>
+    <div class="wm">
+      <span class="wt">11–12 月　保險旺季</span>
+      <b>專心看診</b>
+      加拿大延伸醫療給付年底歸零，診間會滿檔，這是一年最好賺的兩個月。<span style="color:var(--cinnabar)">內容降到每週 1 支，全部用囤的。這段時間不開賣。</span>同時開始建 Thinkific 基礎課程架構。
     </div>
     <div class="wm hot">
-      <span class="wt">第 10 週</span>
-      <b>免費工作坊 → 當晚開賣</b>
-      45 分鐘真的教東西，最後開賣，限時 72 小時。
+      <span class="wt">1 月</span>
+      <b>免費工作坊 → 當週開賣</b>
+      45 分鐘真的教東西，最後開賣。1 月是北美按摩師換照與進修的旺季，而且大家年底剛賺完錢、心情比較 calm。
+    </div>
+    <div class="wm">
+      <span class="wt">1 月中 – 2 月底</span>
+      <b>第一梯開跑</b>
+      六週帶班，一邊帶一邊補課程內容。
+    </div>
+    <div class="wm">
+      <span class="wt">3–4 月　回台灣一個月</span>
+      <b>只做不需要現場的工作</b>
+      女兒在台北讀小學。這段時間剪輯 Live 錄影、整理錄播版、寫講義。有網路就能做。
+    </div>
+    <div class="wm">
+      <span class="wt">5 月起</span>
+      <b>第二梯，或錄播版上架</b>
+      有見證了、課綱定了，可以開第二梯或轉常態販售。
     </div>
   </div>
 
   <div class="wsplit">
-    <div class="wbox a"><div class="bt">第 10–12 週　A 案</div>課已錄完，賣出去就能看。目標 16 人，沒有交付壓力，慢慢賣。</div>
-    <div class="wbox b"><div class="bt">第 10–12 週　B 案</div>限額 10 人收滿，第一梯開跑，一邊帶班一邊錄課，六週後結束。</div>
+    <div class="wbox a"><div class="bt">1 月　A 案</div>課已錄完，賣出去就能看。目標 26 人，沒有交付壓力，慢慢賣。</div>
+    <div class="wbox b"><div class="bt">1 月　B 案</div>目標 12–15 人，第一梯開跑，一邊帶班一邊補課程，六週後結束。</div>
   </div>
 </div>
 
 <div class="callout">
-  <div class="ct2">11–12 月　保險旺季</div>
-  加拿大延伸醫療給付年底歸零，診間會滿檔，這是一年最好賺的兩個月。內容降到低量、用囤的，<b>這段時間專心看診就好</b>。
+  <div class="ct2">回本點在 1 月，不是 10 月</div>
+  前五個月是建置期，<b>沒有課程收入是正常的</b>，不要拿那五個月的數字去判斷這件事成不成立。<br><br>
+  前五個月要看的是名單有沒有在長。<b>12 月底名單要到 200–250</b>，這是唯一的硬指標。
 </div>
 </section>
 
@@ -1026,33 +1073,33 @@ footer a:hover{text-decoration:underline;}
 <div class="hours">
   <div class="hcard ha">
     <h4>A 案　純線上</h4>
-    <div class="h4en">Plan A · Weeks 1–9</div>
-    <div class="hbig">10–12<small> 小時／週</small></div>
+    <div class="h4en">Plan A · Aug – Dec</div>
+    <div class="hbig">8–10<small> 小時／週</small></div>
     <div class="hsub">開賣前要把課錄完</div>
     <ul>
-      <li>每週 3–4 支短影片</li>
+      <li>每週 1–2 支 Reels ＋ 輪播貼文</li>
       <li>錄七個單元，3–4 個拍攝日</li>
       <li>錄免費工作坊與檢測解說</li>
-      <li><b>第 10 週後：幾乎為零</b></li>
+      <li><b>1 月開賣後：幾乎為零</b></li>
     </ul>
   </div>
   <div class="hcard hb">
     <h4>B 案　帶班</h4>
-    <div class="h4en">Plan B · Weeks 1–9</div>
-    <div class="hbig">6–7<small> 小時／週</small></div>
+    <div class="h4en">Plan B · Aug – Dec</div>
+    <div class="hbig">約 4<small> 小時／週</small></div>
     <div class="hsub">開賣前不用錄課</div>
     <ul>
-      <li>每週 3–4 支短影片</li>
+      <li>每週 1–2 支 Reels ＋ 輪播貼文</li>
       <li>錄免費工作坊與檢測解說</li>
       <li>準備課綱，但不用拍</li>
-      <li><b>第 11 週起：每週約 5 小時，共六週</b></li>
+      <li><b>1 月中起：每週約 5 小時，共六週</b></li>
     </ul>
   </div>
 </div>
 
 <div class="callout">
   <div class="ct2">不管選哪案都要照做</div>
-  <b>用集中拍攝日。</b>一個月挑兩天，一天拍完 6 支，其他日子完全不碰。不要每天擠一點，那條路你走過一次了。
+  <b>每週固定挪一段時間，一次做完一週的量。</b>Reels 加輪播貼文一起處理，其他日子完全不碰。不要每天擠一點，那條路你走過一次了。
 </div>
 </section>
 
@@ -1076,6 +1123,13 @@ footer a:hover{text-decoration:underline;}
     <div class="chip"><div class="cn">清邁傳統泰式按摩</div><div class="cy">學校＋盲人師傅</div><div class="ce">Thai Massage, Chiang Mai</div></div>
     <div class="chip"><div class="cn">台灣註冊護理師</div><div class="cy">醫療背景</div><div class="ce">RN, Taiwan</div></div>
   </div>
+</div>
+
+<div class="callout">
+  <div class="ct2">你已經有的社會證明</div>
+  <div class="ct2en">Existing Social Proof</div>
+  <b>Google 評論接近 100 則，其中約 90% 是真實客人給的五星。</b>這是很多剛起步的人完全沒有的東西，而且是可查證的第三方評價。<br><br>
+  新帳號從零開始不代表你從零開始，<b>這些評價可以直接用在銷售頁和自我介紹裡</b>。
 </div>
 
 <div class="lyr3">
@@ -1133,6 +1187,12 @@ footer a:hover{text-decoration:underline;}
   七個單元對應三層。<b>右邊那欄是你錄影時可以直接開場講的話</b>，都是你自己的原話。
 </p>
 
+<div class="callout" style="margin-top:0;margin-bottom:var(--gap)">
+  <div class="ct2">主打是「基礎發力」，其他是配菜</div>
+  澳洲、美國、馬來西亞的按摩師問的都是同一件事：<b>怎麼發力</b>。因為一般診所只教你怎麼按，不教你怎麼用身體。按到客人爽就好，你的手痛不痛不關他們的事。<br><br>
+  <b>所以單元 02、03、04 是主菜，其他是讓這份套餐更完整的配菜。</b>
+</div>
+
 <div class="mods">
   <div class="mod">
     <div class="mod-n">01</div>
@@ -1156,7 +1216,7 @@ footer a:hover{text-decoration:underline;}
   </div>
   <div class="mod star">
     <div class="mod-n">05</div>
-    <div class="mod-l"><div class="mod-t">學會說不，也是專業能力<span class="badge">只有你能教</span></div><div class="mod-ten">Boundaries Are a Clinical Skill</div><div class="mod-d">界線、排班設計、日記法、自我覺察。<b>不用拍動作示範</b>，錄製最省力，差異最大。</div></div>
+    <div class="mod-l"><div class="mod-t">學會說不，也是專業能力<span class="badge soft">附贈單元</span></div><div class="mod-ten">Boundaries Are a Clinical Skill</div><div class="mod-d">界線、排班設計、日記法。<b>不是主打賣點，是套餐裡的配菜</b>，但因為別人沒有，它會讓整份課看起來更完整。不用拍動作示範，錄製最省力。</div></div>
     <div class="mod-r">「經理又說要延長時間，我一轉身突然頭暈，兩眼一黑，撞到旁邊的牆。」</div>
   </div>
   <div class="mod star">
@@ -1173,7 +1233,7 @@ footer a:hover{text-decoration:underline;}
 
 <div class="callout">
   <div class="ct2">兩件事務必照做</div>
-  <b>七個單元綁在一起賣。</b>拆開賣，單元 2–4 會被拿去跟別人的身體力學課比價，一定輸。綁在一起，前四個單元就變成附贈的。<br><br>
+  <b>七個單元綁在一起賣。</b>單元 2–4 是主菜，但單獨拿出來會被跟別人的身體力學課比價，一定輸。綁在一起，前四個單元就變成附贈的。<br><br>
   <b>穴位內容講技巧，不講法規。</b>你的針灸執照是安大略省的，但學生分散在 45 個以上不同的州。課裡不要說「這些你可以合法用」，改成講壓力、角度與觸感，每堂開頭附一句「請依你所在州／省的執業範圍規定」。
 </div>
 </section>
@@ -1187,19 +1247,19 @@ footer a:hover{text-decoration:underline;}
   <div class="pickgrid">
     <div class="pick a">
       <div class="pick-t">選 A 如果</div>
-      <p><b>你完全不想固定時間出現在螢幕前。</b>現在就錄課、錄完就結束，之後全自動。代價是三個月要賣掉 16 套，而且要在一個<b>有免費學分選項</b>的市場裡，賣三倍價的錄播，同時沒有高價版本當價格錨。</p>
+      <p><b>你完全不想固定時間出現在螢幕前。</b>現在就錄課、錄完就結束。代價是要賣掉 26 套 $297 的課，而且要在一個<b>有免費學分選項</b>的市場裡競爭，沒有高價版本當價格錨，手上也還沒有任何學員見證。</p>
     </div>
     <div class="pick b">
       <div class="pick-t">選 B 如果</div>
-      <p><b>你願意用六週，每週開一次 Zoom 帶 10 個同行。</b>只要 6 個人就打平，跑完之後 A 案要的東西你全部都有了。</p>
+      <p><b>你願意用六週，每週開一次 Zoom 帶 12–15 個同行。</b>只要 8 個人就打平，而且跑完之後 A 案要的東西你全部都有了。</p>
     </div>
   </div>
 
   <p class="cp">決定的關鍵不是哪個比較賺，是這一題：</p>
-  <p class="pull">「如果有 10 個北美的按摩師，每週跟你上一次 Zoom，讓你看他們的動作、告訴他們哪裡錯，你教得來嗎？」</p>
-  <div class="pullen">If ten therapists met you on Zoom each week and asked what they were doing wrong, could you teach that?</div>
+  <p class="pull">「如果有 12 到 15 個北美的按摩師，每週跟你上一次 Zoom，讓你看他們的動作、告訴他們哪裡錯，你教得來嗎？」</p>
+  <div class="pullen">If twelve to fifteen therapists met you on Zoom each week and asked what they were doing wrong, could you teach that?</div>
   <p class="cp">如果答案是「這我可以」，選 B。<b>因為這就是你每天在診間做的事，只是換成螢幕。</b></p>
-  <p class="pull">第一梯的 10 個人，是在幫你把這堂課寫出來。</p>
+  <p class="pull">第一梯的 12 到 15 個人，是在幫你把這堂課寫出來。</p>
   <p class="cp">他們卡在哪裡、問了什麼、什麼講法他們聽得懂，這些會變成第二梯的課綱，也會變成明年那堂錄播課的骨架。<b>所以第一梯要的不是完美，是真實。</b></p>
 </div>
 </section>
