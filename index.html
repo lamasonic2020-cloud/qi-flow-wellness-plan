@@ -193,6 +193,35 @@ h1 em{font-style:normal;color:var(--cinnabar);}
 .gain-foot{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16);font-size:.85em;color:#8B9C94;line-height:1.75;}
 .gain-foot b{color:#E8A49B;}
 
+/* funnel: disabled lane + why-note */
+.flane.soon{opacity:.45;filter:grayscale(1);}
+.fwhy{
+  width:88%;margin-top:14px;text-align:left;
+  background:var(--white);border-left:3px solid var(--cinnabar);border-radius:3px;
+  padding:16px 18px;font-size:.86em;color:var(--ink-2);line-height:1.75;
+}
+.fwhy .ct2{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinnabar);margin-bottom:7px;}
+.fwhy b{color:var(--ink);}
+
+/* callout: english subtitle + ranked sell list */
+.callout .ct2en{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:-5px 0 10px;}
+.sell{list-style:none;margin:14px 0 0;padding:0;counter-reset:sell;}
+.sell li{
+  counter-increment:sell;position:relative;padding:9px 0 9px 34px;
+  line-height:1.7;border-top:1px solid var(--hair);
+}
+.sell li:first-child{border-top:none;padding-top:0;}
+.sell li::before{
+  content:counter(sell);position:absolute;left:0;top:9px;
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--mono);font-size:11px;background:var(--surface);color:var(--muted);
+}
+.sell li:first-child::before{top:0;}
+.sell li.top{font-size:1.06em;}
+.sell li.top::before{background:var(--cinnabar);color:#fff;}
+.sell li b{color:var(--ink);}
+.sell .why{display:block;font-size:.84em;color:var(--muted);line-height:1.6;margin-top:1px;}
+
 /* =========================================================
    THE ONE LINE — six gates, click to open the strategy
    ========================================================= */
@@ -404,7 +433,8 @@ footer a:hover{text-decoration:underline;}
   .w2{width:95%;}
   .w3{width:90%;}
   .w4{width:82%;}
-  .fsplit{width:100%;grid-template-columns:1fr;gap:10px;}
+  .fsplit,.fwhy{width:100%;}
+  .fsplit{grid-template-columns:1fr;gap:10px;}
   .fbar{padding:13px 16px;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;}
   .fcap{text-align:left;margin-left:0;margin-right:0;}
   .floop{padding:17px 16px;}
@@ -515,28 +545,27 @@ footer a:hover{text-decoration:underline;}
 
     <div class="frow"><div class="fbar w3">
       <span class="fb-n">03</span>
-      <span><span class="fb-t">電郵行銷，然後分流</span><span class="fb-en">　Nurture</span></span>
+      <span><span class="fb-t">電郵行銷，第一年只開一個門</span><span class="fb-en">　Nurture</span></span>
     </div></div>
-    <p class="fcap">自動寄信，講你的故事和觀點。信裡<b>同時開兩個門，讓他自己選</b>。</p>
+    <p class="fcap">自動寄信，講你的故事和觀點。<b>第一年信裡只放一個出口</b>，不要讓人自己選便宜的。</p>
 
     <div class="farrow">↓</div>
 
     <div class="fsplit">
-      <div class="flane low">
+      <div class="flane low soon">
         <div class="flane-h">
-          <div class="flane-tag">左　低價 Self-Serve</div>
-          <div class="flane-n">他自己買，自己看</div>
+          <div class="flane-tag">左　第二年才開 Not Yet</div>
+          <div class="flane-n">$497 錄播課</div>
         </div>
         <div class="flane-b"><ol>
-          <li>信裡直接放購買連結</li>
-          <li>刷卡，系統自動開通</li>
-          <li><b>你完全不用出現</b></li>
+          <li>明年 3–4 月才存在（見第 06 關）</li>
+          <li>現在開這扇門會直接吃掉高單價</li>
+          <li><b>等錄播版上線，這裡才打開</b></li>
         </ol></div>
-        <div class="flane-p">$497　錄播課</div>
       </div>
       <div class="flane high">
         <div class="flane-h">
-          <div class="flane-tag">右　高單價 High Ticket</div>
+          <div class="flane-tag">右　高單價 · 第一年唯一出口 High Ticket</div>
           <div class="flane-n">先聊，再成交</div>
         </div>
         <div class="flane-b"><ol>
@@ -546,6 +575,11 @@ footer a:hover{text-decoration:underline;}
         </ol></div>
         <div class="flane-p">$1,297 起　帶班／一對一</div>
       </div>
+    </div>
+
+    <div class="fwhy">
+      <div class="ct2">為什麼第一年只開一個門</div>
+      $497 一旦先出現，$1,297 的價格錨就沒了，人會直接買便宜的，帶班收不滿 10 人。等第 05、06 關跑完，$497 才會變成「原價 $1,297 的內容」，<b>那時候它是便宜，不是貴</b>。
     </div>
 
     <div class="farrow">↓</div>
@@ -619,7 +653,9 @@ footer a:hover{text-decoration:underline;}
     </div>
     <div class="risk">
       <b class="rt">要注意</b>
-      北美同類錄播課落在 $20–200，有四個教了十幾年的品牌。$497 比行情貴 3–5 倍，全靠「東西方整合」和「學分」撐。而且要 16 個人，等於第一次開賣就要打出資深創作者的成績。
+      北美同類錄播課落在 $20–200，而且有四個教了十幾年的品牌：<b>Save Your Hands!</b>（傷害預防，全美與加拿大數百間按摩學校採用當教材）、<b>imassage / Eric Stephenson</b>（No Thumbs 深層按摩，$299 換 14 個學分，教了 20 年以上）、<b>LearnMuscles / Joe Muscolino</b>（教了 35 年以上）、<b>MTMB Institute</b>（8 CEU 自學課，主打便宜）。<br><br>
+      更麻煩的是學分：<b>Stephenson 的課在 ABMP 會員平台是免費送的，Muscolino 的平台有 320 小時以上免費 NCBTMB 學分。</b>「有 8 個進修學分」撐不起價格，你沒辦法跟免費比價。<br><br>
+      所以 $497 純錄播真正能撐住的只剩「東西方整合」一項，而且要賣 16 個人。
     </div>
   </div>
 
@@ -686,8 +722,8 @@ footer a:hover{text-decoration:underline;}
   <div class="bgrp">
     <div class="bgrp-t">三個月內回本的機率（這項越長越好）</div>
     <div class="bgrp-en">Odds of breaking even within 3 months</div>
-    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:51%">30–35%</div></div></div>
-    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:100%">60–65%</div></div><span class="bwin">近 2 倍</span></div>
+    <div class="brow"><span class="btag">A</span><div class="btrack"><div class="bfill a" style="width:40%">25%</div></div></div>
+    <div class="brow"><span class="btag">B</span><div class="btrack"><div class="bfill b" style="width:100%">60–65%</div></div><span class="bwin">約 2.5 倍</span></div>
   </div>
 </div>
 
@@ -695,6 +731,19 @@ footer a:hover{text-decoration:underline;}
   <div class="ct2">為什麼建議 B 案</div>
   <b>不是因為比較賺，是因為失敗成本低很多。</b>A 案要你先花 3–4 個拍攝日把課錄完，然後祈禱有 16 個人買；只賣出 6 個，課已經錄了、時間已經花了。<br><br>
   B 案是<b>先收錢再錄課</b>。開賣那天只需要 6 個人，收到錢才開始錄，而且錄的內容是根據 10 個真實學員的問題，不是憑空猜的。
+</div>
+
+<div class="callout">
+  <div class="ct2">B 案賣的東西，那四家一家都沒有</div>
+  <div class="ct2en">What none of the four can offer</div>
+  他們全部是錄播或實體工作坊，Stephenson 的工作坊甚至標明 100% hands-on，<b>他自己知道這件事必須動手，所以他不做線上帶班。</b><br><br>
+  而身體力學本來就學不會靠單向影片，這件事按摩師自己最清楚。
+  <ol class="sell">
+    <li class="top"><b>有人看你做</b><span class="why">這是 $1,297 唯一真正的支撐</span></li>
+    <li><b>針灸執照與遠端取穴</b><span class="why">四家都沒有，所以沒有比價基準</span></li>
+    <li><b>你自己垮過的三層</b><span class="why">別人教怎麼保護手，你能教排班和底子</span></li>
+    <li>學分<span class="why">規格欄，不是標題</span></li>
+  </ol>
 </div>
 </section>
 
@@ -732,6 +781,10 @@ footer a:hover{text-decoration:underline;}
         <li>每支結尾固定同一句話，把人帶到三層檢測</li>
         <li>同步送出北美教學資格申請，<b>審核要時間，第 10 週要用就是現在要送</b></li>
       </ul>
+      <div class="nd-note">
+        <div class="nt">為什麼要送這個</div>
+        不是為了把「有學分」當賣點，市面上學分是免費的。真正的價值是兩件事：<b>Approved Provider 會被列進 NCBTMB 課程目錄</b>，每年有數千名按摩師在那裡找課，這是不用拍片的被動流量；以及在你還沒有品牌聲量的時候，<b>這個標籤是第三方替你背書</b>。
+      </div>
       <div class="nd-note">
         <div class="nt">這一關真正在做的事</div>
         決定後面五關有沒有人。名單是唯一會複利的東西，<b>影片的量比影片的完美度重要</b>。
@@ -851,7 +904,7 @@ footer a:hover{text-decoration:underline;}
       </ul>
       <div class="nd-note warn">
         <div class="nt">不能只把 Live 錄影剪一剪</div>
-        第一梯賣的是「有你在」，錄播版沒有你。直接拿實況上架，買的人會拿到一堆冗長影片，<b>完課率崩掉，而完課率崩掉就拿不到學分證書，CE 賣點直接失效</b>。<br><br>
+        第一梯賣的是「有你在」，錄播版沒有你。直接拿實況上架，買的人會拿到一堆冗長影片，<b>完課率崩掉，學員拿不到學分證書，那是退款和客訴的來源</b>。學分不是賣點，但沒發出去會變成問題。<br><br>
         正確做法是<b>重錄主課、剪用 Q&amp;A</b>：主教學重錄一次，每單元 30–40 分鐘、乾淨有結構；常見問題從 Live 錄影剪。重錄成本不高，因為那時候你已經很清楚要講什麼了。
       </div>
     </div>
@@ -1134,7 +1187,7 @@ footer a:hover{text-decoration:underline;}
   <div class="pickgrid">
     <div class="pick a">
       <div class="pick-t">選 A 如果</div>
-      <p><b>你完全不想固定時間出現在螢幕前。</b>現在就錄課、錄完就結束，之後全自動。代價是三個月要賣掉 16 套，而且沒有高價版本當價格錨。</p>
+      <p><b>你完全不想固定時間出現在螢幕前。</b>現在就錄課、錄完就結束，之後全自動。代價是三個月要賣掉 16 套，而且要在一個<b>有免費學分選項</b>的市場裡，賣三倍價的錄播，同時沒有高價版本當價格錨。</p>
     </div>
     <div class="pick b">
       <div class="pick-t">選 B 如果</div>
